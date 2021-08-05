@@ -1,0 +1,129 @@
+/* | | ----------------------------BODY -----------------------------  */
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    font-family: "Open Sans Condensed", sans-serif;
+    position: relative;
+    min-height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  h2,
+  h1,
+  h3,
+  h4 {
+    font-family: "Amatic SC", cursive;
+  }
+  
+  ul {
+    list-style: none;
+  } 
+  /* | | ---------------------------- HEADER -----------------------------  */
+  
+  .navalert-container {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: #ffdb4d;
+  }
+  
+  .navalert-container .row,
+  .col-12 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .site-wide-alert {
+    background: transparent;
+    margin: 0;
+  }
+  
+  .site-wide-alert h5 {
+    color: #ff471a;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+  }
+  
+  #header {
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    margin-top: 0;
+    border-bottom-color: lightgray;
+    border-bottom-width: 1px;
+  }
+  
+  .header .navbar-light {
+    background-color: #fff;
+  }
+  
+  .nav-fill {
+    width: 40%;
+  }
+  
+  .navbar-toggler-icon {
+    color: white;
+  }
+  
+  .navbar-collapse .nav-item {
+    display: inline-block;
+    margin: auto;
+    font-family: "Amatic SC", cursive;
+    font-weight: 700;
+    font-size: 150%;
+    letter-spacing: 4px;
+  }
+  
+  .nav-link {
+    color: #696969;
+  }
+  
+  .nav-brand {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 90px;
+    height: 90px;
+    margin-right: -45px;
+    text-align: center;
+  }
+  
+  .nav-brand img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .dropdown-menu .show {
+    box-sizing: content-box;
+    display: inline-block;
+  }
+  
+  .dropdown-menu {
+    z-index: 2000;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 120%;
+    width: auto;
+    border: none;
+    text-align: center;
+  }
+  
+  .dropdown-menu a:hover {
+    background: rgba(255, 219, 77, 0.7);
+  }
+  
