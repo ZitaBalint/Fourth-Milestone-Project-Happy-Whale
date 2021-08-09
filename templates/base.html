@@ -41,21 +41,42 @@
 
 <body>
   <header class="container-fluid fixed-top">
-    <div class="row bg-white pt-lg-2 d-none d-lg-flex">
-      <div class="navbar-header">
+    <div id-="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
         <a class="nav-brand" href="{% url 'home' %}"><img
             src="https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605870152/Rest%20of%20the%20site/HW_logo_1_ss3d8h.jpg" /></a>
 
       </div>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-      <div class="form-inline my-2 my-lg-0">
-        <a class="nav-link nav-item" href="#">
+      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
+        <form method="GET" action="">
+          <div class="imput-group w-100">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </div> 
+          <div class="input-group-append">
+          <button class="btn btn-outline-success" type="submit">
+            <span searc-icon>
+              <i class="fas fa-search"></i>
+            </span>
+          </button>
+        </div> 
+        </form>
+      </div>
+      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
+      <div class="list-inline my-2 my-lg-0">
+        <ul>
+          <li class="list-inline-item">
+            <a class="nav-link" href="#">
+              <i class="fas fa-user fa-lg"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+        <a class="nav-link" href="#">
           <i class="fas fa-shopping-basket fa-lg"></i>
         </a>
+      </li>
+      </ul>
       </div>
+    </div>
     </div>
     <!---------------Nav bar Toggle Bootstrap copied from original project------------------>
     <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-light bg-white">
@@ -74,7 +95,7 @@
   </header>
 
   {% if messages %}
-    <div class="message-container"></div>
+  <div class="message-container"></div>
   {% endif %}
 
   {% block page_header %}
