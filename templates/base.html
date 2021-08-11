@@ -40,7 +40,7 @@
 </head>
 
 <body>
-  <header class="container-fluid fixed-top">
+  <div class="container-fluid navbar-fixed-top ">
     <div id-="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
         <a class="nav-brand" href="{% url 'home' %}"><img
@@ -79,11 +79,11 @@
     </div>
     </div>
     <!---------------Nav bar Toggle Bootstrap copied from original project------------------>
-    <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-light bg-white">
+    <div class="row bg-white">
+    <nav class="navbar navbar-expand-lg  navbar-light header" id="header">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-            aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
@@ -91,8 +91,8 @@
         {% include 'includes/main-nav.html' %}
       </div>
     </nav>
-
-  </header>
+  </div>
+  </div>
 
   {% if messages %}
   <div class="message-container"></div>
