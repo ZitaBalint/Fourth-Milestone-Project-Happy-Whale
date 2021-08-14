@@ -40,6 +40,20 @@
 </head>
 
 <body>
+
+  
+   <!-------------- Special measurments and delivery options  ------------->
+   <div class="container-fluid navalert-container">
+     <div class="row d-none d-md-block">
+       <div class="col-12">
+         <div class="site-wide-alert alert alert-warning">
+           <h5><i class="fas fa-shipping-fast"></i> Special offer! Free delivery over £30! | <i class="fas fa-cut"></i>
+             All our prints are available in premature sizes and special measurements!</h5>
+         </div>
+       </div>
+     </div>
+   </div>
+   <header>
   <div class="container-fluid navbar-fixed-top ">
     <div id-="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -80,19 +94,21 @@
     </div>
     <!---------------Nav bar Toggle Bootstrap copied from original project------------------>
     <div class="row bg-white">
-    <nav class="navbar navbar-expand-lg  navbar-light header" id="header">
-      <div class="container-fluid">
+      {% include 'includes/mobile-header.html' %}
+    <nav class="navbar navbar-expand-lg navbar-light header" id="header">
+     
         <div class="navbar-header">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-        {% include 'includes/mobile-header.html' %}
+        
         {% include 'includes/main-nav.html' %}
       </div>
     </nav>
+
   </div>
-  </div>
+</header>
 
   {% if messages %}
   <div class="message-container"></div>
