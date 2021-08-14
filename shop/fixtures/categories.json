@@ -1,0 +1,50 @@
+[
+    {
+      "pk": 1,
+      "model": "shop.category",
+      "fields": {
+        "name": "leggings",
+        "display_name": "Leggings"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "shop.category",
+      "fields": {
+        "name": "rompers",
+        "display_name": "Rompers"
+      }
+    },
+    {
+      "pk": 3,
+      "model": "shop.category",
+      "fields": {
+        "name": "dresses",
+        "display_name": "Dresses"
+      }
+    },
+    {
+      "pk": 4,
+      "model": "shop.category",
+      "fields": {
+        "name": "shorts_rompershorts",
+        "display_name": "Shorts & Short Rompers"
+      }
+    },
+    {
+      "pk": 5,
+      "model": "shop.category",
+      "fields": {
+        "name": "accessories",
+        "display_name": "Accessories"
+      }
+    },
+    {
+      "pk": 6,
+      "model": "shop.category",
+      "fields": {
+        "name": "new_season",
+        "display_name": "New Season"
+      }
+    }
+  ]
