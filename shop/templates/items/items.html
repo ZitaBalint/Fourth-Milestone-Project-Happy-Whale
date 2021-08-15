@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid main-shop-container">
+    <div class="container shop-bg-container col-12">
+        <div class="row shopimage-row col-12">
+            <div class="col-md-6 col-12 top-shopimage">
+                <img class="w-100 d-block" src="https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605455705/models/563616D9-1ACA-4883-84FD-8EF51C7D74FB_bktw9f.jpg" alt="Happy babies montage" />
+            </div>
+            <div class="col-md-6 col-12 review-paragraph">
+                <h2>Soft and safe fabrics</h2>
+                <p>
+                    We carefully select our fabrics to ensure they are kind to babies skin and gorgeously soft and comfortable for little legs. All of our fabrics are Öko-Tex Standard 100 certified ensuring they are chemically
+                    safe for the whole family. All seams are overlocked inside for a quality finish .
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container shopitems-container">
+        <div class="row">
+            <div class="col">
+                {{ items }}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

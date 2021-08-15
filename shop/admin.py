@@ -4,7 +4,7 @@ from .models import Item, Category
 
 class ItemAdmin(admin.ModelAdmin):
     list_display = (
-        'tem_code',
+        'item_code',
         'name',
         'category',
         'price',
