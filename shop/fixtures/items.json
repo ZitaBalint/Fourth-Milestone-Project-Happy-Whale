@@ -3,103 +3,482 @@
       "pk": 1,
       "model": "shop.item",
       "fields": {
-        "slug": "pp5001340155",
-        "name": "Arizona Original Bootcut Jeans",
-        "item_description": "Bootcut jeans in our just-right original fit are comfortable and look great too.  5-pocket style sits below waist straight fit through seat and thigh bootcut leg 18\" leg opening cotton washable imported extended sizes and washes available online only",
-        "price": 53.99,
-        "category": 6,
-        "review_rating": 4.6,
-        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1618687039/3rd%20project/pinar-mavi-vhOdQexbs6k-unsplash_ky4ibt.jpg"}
+        "slug": "happy-world-short",
+        "name": "Happy World Short",
+        "item_description": "This beautiful rainbow and sunshine print will bring smile on everyone's face, even on a rainy day. We ensure fabrics are kind to babies’ skin and gorgeously soft and comfortable for little legs.",
+        "price": 12.50,
+        "category": 4,
+        "review_rating": 4.9,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629562871/Happy%20Whale/IMG_1066_fodmgo.jpg"}
     },
     {
       "pk": 2,
       "model": "shop.item",
       "fields": {
-        "slug": "pp5001600425",
-        "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants",
-        "item_description": "Straight-leg styling and on-the-job comfort make our Audra pants a flattering business decision. flat front zip fly with hook-and-bar closure 2 front and 2 back welt pockets 34 1/2\" inseam polyester/rayon/spandex washable imported",
-        "price": 58.99,
-        "category": 4,
-        "review_rating": 4.6}
+        "slug": "happy-world-headband",
+        "name": "Happy World Headband",
+        "item_description": "Gorgeous happy world headband not just for the little ones. Also available in adult size for a fun mum-daughter matching day out.",
+        "price": 6.50,
+        "category": 5,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629562983/Happy%20Whale/IMG_1067_c495cm.jpg"}
     },
     {
       "pk": 3,
       "model": "shop.item",
       "fields": {
-        "slug": "pp5001730010",
-        "name": "Royal Velvet Matte Satin Square 3-pc. Coverlet Set",
-        "item_description": "Add a 5-star resort feel to your bedroom with the elegant Matte Satin Square coverlet set, featuring modern embroidered squares and flanged trim.  square embroidered pattern flanged-edge trim fabric is washable for easy care 3-piece set includes: coverlet 2 shams Polyester coverlet with cotton fill; polyester shams. Washable. Imported. Full/Queen: coverlet is 92x96\" King: coverlet is 110x96\"",
-        "price": 205.99,
-        "category": 2,
-        "review_rating": 4.7}
+        "slug": "happy-world-dress",
+        "name": "Happy World Dress",
+        "item_description": "This beautiful rainbow and sunshine print dress will bring smiles and happiness even on a rainy day. Perfect match with a bright underlayer and tights. ",
+        "price": 22.50,
+        "category": 3,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563007/Happy%20Whale/IMG_1068_aeq1kd.jpg"}
     },
     {
       "pk": 4,
       "model": "shop.item",
       "fields": {
-        "slug": "pp5001890157",
-        "name": "Gibson Infinite Glaze 16-pc. Dinnerware Set",
-        "item_description": "An exhibition in contrast, this dinnerware sets simple, clean design is perfect for both everyday use and special occasions. durable stoneware construction microwave and oven safe service for 4 16-piece set includes: four 10\" dinner plates four 7\" dessert plates four 6\" bowls four 12-ounce mugs Stoneware. Dishwasher safe. Imported.",
-        "price": 169.99,
-        "category": 6,
-        "review_rating": 3}
+        "slug": "happy-world-leggings",
+        "name": "Happy World Leggings",
+        "item_description": "This beautiful happy world print will makes everyone smile even on a rainy day. We ensure fabrics are kind to babies’ skin and gorgeously soft and comfortable for little legs.",
+        "price": 14.50,
+        "category": 1,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563028/Happy%20Whale/IMG_1069_as96t5.jpg"}
     },
     {
       "pk": 5,
       "model": "shop.item",
       "fields": {
-        "slug": "pp5002111605",
-        "name": "Simply Calphalon Enameled Cast Iron Panini Pan",
-        "item_description": "Durable enameled cast iron construction allows the panini pan to heat evenly, so you can whip up a meal with ease and complete confidence.  cooks with little to no oils or fats so every recipe is healthier nonstick interior for quick and easy clean-ups stainless steel knob on cover enameled cast iron heats evenly and consistently stove, broiler and oven safe Cast iron/stainless steel. Dishwasher safe. Imported. ",
-        "price": 232.99,
-        "category": 6,
-        "review_rating": 5}
+        "slug": "happy-world-romper",
+        "name": "Happy World Romper",
+        "item_description": "This beautiful happy world print will makes everyone smile even on a rainy day. We ensure fabrics are kind to babies’ skin and gorgeously soft and comfortable for little legs.",
+        "price": 22.50,
+        "category": 2,
+        "review_rating": 4.9,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563044/Happy%20Whale/IMG_1070_gz7dzq.jpg"}
     },
     {
       "pk": 6,
       "model": "shop.item",
       "fields": {
-        "slug": "pp5002260206",
-        "name": "The Foundry Supply Co. Solid Pocket TeeBig & Tall",
-        "item_description": "Get a better basic tee in a size that truly fits with this pocket t-shirt from The Foundry Supply Co.  short-sleeve, crew-neck tee left chest pocket 100% cotton washable imported",
-        "price": 30.99,
-        "category": 4,
-        "review_rating": 4.7
-      }
+        "slug": "star-headband",
+        "name": "Star Headband",
+        "item_description": "Gorgeous stars headband not just for the little starts. Also available in adult size for a fun mum-daughter matching day out.",
+        "price": 7.00,
+        "category": 5,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563182/Happy%20Whale/IMG_1075_kk1qwz.jpg"}
     },
     {
       "pk": 7,
       "model": "shop.item",
       "fields": {
-        "slug": "pp5002440521",
-        "name": "Liz Claiborne Classic Sophie Secretly Slender Trouser Leg Pants - Plus",
-        "item_description": "Walk a little taller in our slimming straight-leg pants. flat front slim fit straight leg front fly with nylon zipper, hook and bar closure 32\" inseam polyester/rayon/spandex washable imported ",
-        "price": 59,
-        "category": 4,
-        "review_rating": 4.4
-      }
+        "slug": "anchor-leggings",
+        "name": "Anchor Leggings",
+        "item_description": "This anchor print is a perfect summer outfit for little sailors. We carefully select our fabrics to ensure they are kind to babies’ skin and gorgeously soft and comfortable for little legs.",
+        "price": 13.50,
+        "category": 1,
+        "review_rating": 4.9,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563095/Happy%20Whale/IMG_1072_gboyun.jpg"}
     },
     {
       "pk": 8,
       "model": "shop.item",
       "fields": {
-        "slug": "pp5002601115",
-        "name": "Rachael Ray Ceramic Olive Oil Dispenser",
-        "item_description": "This olive oil dispenser is designed for storing extra virgin olive oil, so it's close at hand for drizzling on food.  24-ounce capacity cruet opaque bottle and non-porous glazed interior keep oil in the dark to avoid oxidation and preserve taste playful, contemporary design Stoneware. Dishwasher-safe. Imported.",
-        "price": 36.99,
+        "slug": "anchor-shorts",
+        "name": "Anchor Shorts",
+        "item_description": "This anchor print is a perfect summer outfit for little sailors. We carefully select our fabrics to ensure they are kind to babies’ skin and gorgeously soft and comfortable for little legs.",
+        "price": 11.50,
         "category": 4,
-        "review_rating": 4.5}
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563136/Happy%20Whale/IMG_1073_npvend.jpg"}
     },
     {
       "pk": 9,
       "model": "shop.item",
       "fields": {
-        "slug": "pp5002690715",
-        "name": "Protech Performance Sheet Set",
-        "item_description": "Protech sheets are like activewear for your bed! The same cutting edge technology that is used in today's sportswear is also used in these Protech Plus sheets to give you a better night's sleep. Breathable ultra-fine microfiber wicks away moisture, keeping your body cool throughout the night while a 4-way stretch component allows you comfort in movement. This stretching ability also helps while making the bed, fitting most premium size mattresses; you won't have to struggle to get the sheets to fit all the way around.  4-way stretch component allows you comfort in movement available in a variety of solid colors microfiber knit fits mattresses up to 19\" deep Set includes: fitted sheet flat sheet 2 pillowcases Polyester/spandex. Washable. Imported. Full: 54x75 Queen: 60x80 King: 78x80 Cal. King: 72x84",
-        "price": 169.99,
+        "slug": "bubby-dress",
+        "name": "Bunny Dress",
+        "item_description": "We just can’t get enough of this super cute bunnies and rainbows dress. Perfect outfit for any occasion.",
+        "price": 22.50,
+        "category": 3,
+        "review_rating": 4.8,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563156/Happy%20Whale/IMG_1074_inx3nw.jpg"}
+    },
+    {
+      "pk": 10,
+      "model": "shop.item",
+      "fields": {
+        "slug": "happy-whale-headband",
+        "name": "Happy Whale Headband",
+        "item_description": "Beautiful happy whale headband not just for the little ones. Also available in adult size for a fun mum-daughter matching day out.",
+        "price": 6.50,
+        "category": 5,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563225/Happy%20Whale/IMG_1077_efjiyv.jpg"}
+    },
+    {
+      "pk": 11,
+      "model": "shop.item",
+      "fields": {
+        "slug": "rainbow-headband",
+        "name": "Rainbow Headband",
+        "item_description": "Colourful rainbow headband not just for the little ones. Also available in adult size for a fun mum-daughter matching day out.",
+        "price": 6.50,
+        "category": 5,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563739/Happy%20Whale/IMG_1080_jkz9sd.jpg"}
+    },
+    {
+      "pk": 12,
+      "model": "shop.item",
+      "fields": {
+        "slug": "bunny-headband",
+        "name": "Bunny Headband",
+        "item_description": "The most perfect accessory for any occasions. Also available in adult size for a fun mum-daughter matching day out.",
+        "price": 6.50,
+        "category": 5,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563758/Happy%20Whale/IMG_1081_tczezl.jpg"}
+    },
+    {
+      "pk": 13,
+      "model": "shop.item",
+      "fields": {
+        "slug": "happy-whale-romper",
+        "name": "Happy Whale Romper",
+        "item_description": "Gorgeous happy whale print, perfect outfit for a gorgeous day out. We carefully select our fabrics to ensure they are kind to babies’ skin and gorgeously soft and comfortable for little legs.",
+        "price": 22.50,
         "category": 2,
-        "review_rating": 4.7}
-    }
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563198/Happy%20Whale/IMG_1076_jn0xfc.jpg"}
+    },
+    {
+      "pk": 14,
+      "model": "shop.item",
+      "fields": {
+        "slug": "traffic-leggings",
+        "name": "Traffic Leggings",
+        "item_description": "This traffic print has to be a favourite right now. The colour makes everyone happy. We carefully select our fabrics to ensure they are kind to babies’ skin and gorgeously soft and comfortable for little legs.",
+        "price": 14.50,
+        "category": 1,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563260/Happy%20Whale/IMG_1078_ixrzcm.jpg"}
+    },
+    {
+      "pk": 15,
+      "model": "shop.item",
+      "fields": {
+        "slug": "jungle-shorts",
+        "name": "Jungle Shorts",
+        "item_description": "These gorgeous jungle print shorts are the perfect outfit for a summer day adventure. We carefully select our fabrics to ensure they are kind to babies’ skin and gorgeously soft and comfortable for little legs.",
+        "price": 12.00,
+        "category": 4,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563779/Happy%20Whale/IMG_1082_ixvfz6.jpg"}
+    },
+    {
+      "pk": 16,
+      "model": "shop.item",
+      "fields": {
+        "slug": "tiger-leggings",
+        "name": "Tiger Leggings",
+        "item_description": "These roarsome little tiger leggings are the new favourites. Gorgeous print and super soft fabric for those little legs.",
+        "price": 15.00,
+        "category": 1,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563796/Happy%20Whale/IMG_1083_wur0qp.jpg"}
+    },
+    {
+      "pk": 17,
+      "model": "shop.item",
+      "fields": {
+        "slug": "tiger-dress",
+        "name": "Tiger Dress",
+        "item_description": "This roarsome little tiger dress is the new favourite. Gorgeous print, super soft and comfortable fabric even for the tiniest tigers.",
+        "price": 22.50,
+        "category": 3,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563822/Happy%20Whale/IMG_1084_hlxddq.jpg"}
+    },
+    {
+      "pk": 18,
+      "model": "shop.item",
+      "fields": {
+        "slug": "dino-dress",
+        "name": "Dino Dress",
+        "item_description": "Isn’t it just the cutest dress?! Gorgeously soft fabric with beautiful dino print, perfect for every season.",
+        "price": 22.50,
+        "category": 3,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605451124/dresses/IMG_8635_ulmrkf.jpg"}
+    },
+    {
+      "pk": 19,
+      "model": "shop.item",
+      "fields": {
+        "slug": "raccoon-dress",
+        "name": "Raccoon Dress",
+        "item_description": "This raccoon dress is a perfect addition to your little one summer/autumn wardrobe. The fabric is just gorgeously soft and the print is just stunning.",
+        "price": 22.00,
+        "category": 3,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605451052/dresses/IMG_8609_gakphj.jpg"}
+    },
+    {
+      "pk": 20,
+      "model": "shop.item",
+      "fields": {
+        "slug": "rainbow-heart-leggings",
+        "name": "Rainbow Hearts Leggings",
+        "item_description": "These happy and colourful rainbow heart leggings are just stunning. They are the perfect outfit for a fun day in the park.",
+        "price": 15.50,
+        "category": 1,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563838/Happy%20Whale/IMG_1085_esziiw.jpg"}
+    },
+    {
+      "pk": 21,
+      "model": "shop.item",
+      "fields": {
+        "slug": "rainbow-heart-rompers",
+        "name": "Rainbow Heart Rompers",
+        "item_description": "These happy and colourful rainbow heart rompers are just stunning. They are the perfect outfit for a fun day in the park.",
+        "price": 22.50,
+        "category": 2,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563876/Happy%20Whale/IMG_1086_wkdpp8.jpg"}
+    },
+    {
+      "pk": 22,
+      "model": "shop.item",
+      "fields": {
+        "slug": "pear-headband",
+        "name": "Pear Headband",
+        "item_description": "The perfect pear! This happy little pear headband is a great match to any summer/autumn outfit. Also available in adult size.",
+        "price": 7.00,
+        "category": 5,
+        "review_rating": 4.9,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605449095/headbands/IMG_20200919_102149_qhj7xp.jpg"}
+    },
 
+    {
+      "pk": 23,
+      "model": "shop.item",
+      "fields": {
+        "slug": "orange-feather-romper-shorts",
+        "name": "Orange Feather Romper Shorts ",
+        "item_description": "Beautiful, vibrant colour feather romper, perfect addition to a summer/autumn wardrobe. We always make our fabrics super soft and gentle to babies’ skiing and for those little legs.",
+        "price": 20.50,
+        "category": 4,
+        "review_rating": 4.9,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605450898/shorties/IMG_8649_khzrfg.jpg"}
+    },
+    {
+      "pk": 24,
+      "model": "shop.item",
+      "fields": {
+        "slug": "pink-panda-romper-shorts",
+        "name": "Pink Panda Romper Shorts",
+        "item_description": "Pandas are one of the most adored animals in the world. Let’s celebrate these amazing bears with these beautiful pink panda romper shorts.",
+        "price": 20.50,
+        "category": 4,
+        "review_rating": 4.8,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605450915/shorties/IMG_8648_ryywhf.jpg"}
+    },
+    {
+      "pk": 25,
+      "model": "shop.item",
+      "fields": {
+        "slug": "green-panda-shorts",
+        "name": "Mint Green Panda Shorts",
+        "item_description": "Pandas are one of the most adored animals in the world. Let’s celebrate these amazing bears with these beautiful mint green panda shorts.",
+        "price": 10.50,
+        "category": 4,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605450995/shorties/IMG_8645_cyluks.jpg"}
+    },
+    {
+      "pk": 26,
+      "model": "shop.item",
+      "fields": {
+        "slug": "pear-romper",
+        "name": "Pear Romper",
+        "item_description": "Simply pear-fect addition to a summer/autumn collection this beautiful pear romper. The fabric is soft and comfortable even for the tiniest little babies. ",
+        "price": 21.00,
+        "category": 2,
+        "review_rating": 4.7,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605456438/rompers/pear_romper_genqnz.jpg"}
+    },
+    {
+      "pk": 27,
+      "model": "shop.item",
+      "fields": {
+        "slug": "blue-hedgehog-romper",
+        "name": "Blue Hedgehog Romper",
+        "item_description": "This is just the cutest little hedgehog romper ever. The fabric is gorgeously soft and comfortable even for the tiniest little babies.",
+        "price": 21.50,
+        "category": 2,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605459846/rompers/blue_hedgehog_romper_qfef9c.jpg"}
+    },
+    {
+      "pk": 28,
+      "model": "shop.item",
+      "fields": {
+        "slug": "rusty-hedgehog-romper",
+        "name": "Rusty Hedgehog Romper",
+        "item_description": "This is just the cutest little hedgehog romper ever. The fabric is gorgeously soft and comfortable even for the tiniest little babies.",
+        "price": 21.50,
+        "category": 2,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605459676/rompers/rusty_romper_j0stgu.jpg"}
+    },
+    {
+      "pk": 29,
+      "model": "shop.item",
+      "fields": {
+        "slug": "yellow-stag-romper",
+        "name": "Yellow Stag Romper",
+        "item_description": "Gorgeous mustard yellow stag print romper. Perfect to brighten up those grey rainy autumn days.",
+        "price": 22.00,
+        "category": 2,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605448646/rompers/PHOTO-2020-10-30-23-06-09_pyzm6n.jpg"}
+    },
+    {
+      "pk": 30,
+      "model": "shop.item",
+      "fields": {
+        "slug": "bips",
+        "name": "Bips",
+        "item_description": "Just to complete the perfect outfit we also make bips in every print that is available on our website. Select your favourite print for your messy little one. ",
+        "price": 6.00,
+        "category": 5,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605450668/headbands/IMG_8652_tdlbrl.jpg"}
+    },
+    {
+      "pk": 31,
+      "model": "shop.item",
+      "fields": {
+        "slug": "umbrella-leggings",
+        "name": "Umbrella Leggings",
+        "item_description": "This beautiful umbrella print brightens up even the greyest rainy days. Our fabrics are super soft and comfortable for babies’ skin and for those little legs.",
+        "price": 12.00,
+        "category": 1,
+        "review_rating": 4.8,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605448839/leggings/IMG_20200915_091703_lcgakj.jpg"}
+    },
+    {
+      "pk": 32,
+      "model": "shop.item",
+      "fields": {
+        "slug": "blue-hedgehog-dress",
+        "name": "Blue Hedgehog Dress",
+        "item_description": "This is just the cutest little hedgehog dress ever. The fabric is gorgeously soft and comfortable even for the tiniest little babies.",
+        "price": 23.00,
+        "category": 3,
+        "review_rating": 4.8,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605451146/dresses/blue_h_romper_fnmrfz.jpg"}
+    },
+    {
+      "pk": 33,
+      "model": "shop.item",
+      "fields": {
+        "slug": "yellow-stag-dress",
+        "name": "Yellow Stag Dress",
+        "item_description": "Gorgeous mustard yellow stag print dress. Perfect to brighten up those grey rainy autumn days",
+        "price": 22.50,
+        "category": 3,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605451213/dresses/PHOTO-2020-10-30-23-06-09_1_pab2px.jpg"}
+    },
+    {
+      "pk": 34,
+      "model": "shop.item",
+      "fields": {
+        "slug": "rusty-hedgehog-leggings",
+        "name": "Rusty Hedgehog Leggings",
+        "item_description": "These are just the cutest little hedgehog leggings ever. The fabric is gorgeously soft and comfortable even for the tiniest little babies. Perfect addition to your little one's autumn wardrobe.",
+        "price": 12.50,
+        "category": 1,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605448889/leggings/IMG_20200919_092316_snpqc6.jpg"}
+    },
+    {
+      "pk": 35,
+      "model": "shop.item",
+      "fields": {
+        "slug": "roccoon-romper-shorts",
+        "name": "Raccoon Romper Shorts",
+        "item_description": "These raccoon romper shorts are perfect addition to your little one's wardrobe. The fabric is just gorgeously soft and the print is just stunning.",
+        "price": 21.00,
+        "category": 4,
+        "review_rating": 4.7,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605450763/shorties/IMG_8637_ogyi5n.jpg"}
+    },
+    {
+      "pk": 36,
+      "model": "shop.item",
+      "fields": {
+        "slug": "rainbow-dress",
+        "name": "Rainbow Dress",
+        "item_description": "Colourful rainbow dress, that will brighten up any day in any season. Super soft fabric for the maximum comfort for your little one.",
+        "price": 22.00,
+        "category": 3,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605451162/dresses/cc5df52a-cfd6-46f3-8c45-eec2af2c7f28_j6wqsb.jpg"}
+    },
+    {
+      "pk": 37,
+      "model": "shop.item",
+      "fields": {
+        "slug": "umbrella-headband",
+        "name": "Umbrella Headband",
+        "item_description": "This beautiful umbrella print brightens up even the greyest rainy days. Also available in adults size for the perfect mum-daughter day out.. or in",
+        "price": 6.50,
+        "category": 5,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605449097/headbands/IMG_20200919_102008_ycma1c.jpg"}
+    },
+    {
+      "pk": 38,
+      "model": "shop.item",
+      "fields": {
+        "slug": "green-panda-leggings",
+        "name": "Mint Green Panda Leggings",
+        "item_description": "Pandas are one of the most adored animals in the world. Let’s celebrate these amazing bears with these beautiful mint green panda leggings.",
+        "price": 11.50,
+        "category": 1,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605448880/leggings/IMG_20200723_125153_lxamck.jpg"}
+    },
+    {
+      "pk": 39,
+      "model": "shop.item",
+      "fields": {
+        "slug": "navy-anchor-romper",
+        "name": "Navy Anchor Romeper Shorts",
+        "item_description": "This navy anchor print is a perfect summer outfit for little sailors. We carefully select our fabrics to ensure they are kind to babies’ skin and gorgeously soft and comfortable for little legs.",
+        "price": 23.00,
+        "category": 4,
+        "review_rating": 4.9,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605450803/shorties/IMG_8650_f79g7l.jpg"}
+    },
+    {
+      "pk": 40,
+      "model": "shop.item",
+      "fields": {
+        "slug": "star-romper-shorts",
+        "name": "Star Romper Shorts",
+        "item_description": "Every little superstar deserves these star print romper shorts. We carefully select our fabrics to ensure they are kind to babies’ skin and gorgeously soft and comfortable for little legs.",
+        "price": 21.00,
+        "category": 4,
+        "review_rating": 5,
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605451012/shorties/b37ec75a-eda2-4542-9960-ef0073df5852_wucxqy.jpg"}
+    }
+    
 ] 
