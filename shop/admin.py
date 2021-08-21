@@ -9,7 +9,7 @@ class ItemAdmin(admin.ModelAdmin):
         'category',
         'price',
         'review_rating',
-        'image',
+        'image_url',
     )
 
     ordering = ('slug', )
