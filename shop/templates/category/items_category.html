@@ -1,0 +1,37 @@
+{% extends "../base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">{{ category.name }}</div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="container shopitems-container">
+        <div class="row">
+            {% for item in items %}
+            <div class="card col-lg-3 col-md-4 col-6">
+                <a href="{{ item.get_absolute_url }}">
+                <img src="{{ item.image_url}}" class="card-img-top" alt="{{ item.name }}"></a>
+                <div class="card-body">
+                   <h5 class="card-title"><a class="text-decoration-none" href="{{ item.get_absolute_url }}">{{ item.name }}</a></h5> 
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ item.price }} </li>
+                    <li class="list-group-item">{{ item.review_rating }}</li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
+</div>
+
+{% endblock %}

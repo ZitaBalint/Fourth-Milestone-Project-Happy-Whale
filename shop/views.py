@@ -16,7 +16,7 @@ def shop_items(request):
 
 
 def item_detail(request, slug):
-    """ Show all the products of the shop """
+    """ Show a specific products of the shop """
 
     item = get_object_or_404(Item, slug=slug)
 
@@ -25,3 +25,16 @@ def item_detail(request, slug):
     }
 
     return render(request, 'items/item_detail.html', context)
+
+
+def items_category(request, category_slug):
+    """ shows specific category of items """
+
+    category = get_object_or_404(Category, category_slug=category_slug)
+
+    context = {
+        'category': category,
+    }
+
+    items = Item.objects.filter(category=category)
+    return render(request, 'shop/category/items_category.html', context, {'items': items})

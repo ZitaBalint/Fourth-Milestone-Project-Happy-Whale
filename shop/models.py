@@ -7,14 +7,14 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
             
+    category_slug = models.SlugField(max_length=200,null=True, blank=True)
     name = models.CharField(max_length=200)
-    display_name = models.CharField(max_length=200, null=True, blank=True)
+
+    def get_absolute_url(self):
+        return reverse('shop:items_category', args=[self.category_slug])
 
     def __str__(self):
         return self.name
-
-    def get_dsiplay_name(self):
-        return self.display_name
 
 
 class Item(models.Model):
