@@ -17,7 +17,7 @@ class ItemAdmin(admin.ModelAdmin):
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
-        'category_slug',
+        'slug',
         'name',
     )
 

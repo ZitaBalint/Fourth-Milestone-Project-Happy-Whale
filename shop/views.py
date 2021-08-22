@@ -30,11 +30,11 @@ def item_detail(request, slug):
 def items_category(request, category_slug):
     """ shows specific category of items """
 
-    category = get_object_or_404(Category, category_slug=category_slug)
+    category = get_object_or_404(Category, slug=category_slug)
 
     context = {
         'category': category,
     }
 
     items = Item.objects.filter(category=category)
-    return render(request, 'shop/category/items_category.html', context, {'items': items})
+    return render(request, 'category/items_category.html', context, {'items': items})

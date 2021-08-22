@@ -3,7 +3,7 @@
       "pk": 1,
       "model": "shop.category",
       "fields": {
-        "category_slug": "leggings",
+        "slug": "leggings",
         "name": "Leggings"
       }
     },
@@ -11,7 +11,7 @@
       "pk": 2,
       "model": "shop.category",
       "fields": {
-        "category_slug": "rompers",
+        "slug": "rompers",
         "name": "Rompers"
       }
     },
@@ -19,7 +19,7 @@
       "pk": 3,
       "model": "shop.category",
       "fields": {
-        "category_slug": "dresses",
+        "slug": "dresses",
         "name": "Dresses"
       }
     },
@@ -27,7 +27,7 @@
       "pk": 4,
       "model": "shop.category",
       "fields": {
-        "category_slug": "shorts_rompershorts",
+        "slug": "shorts_rompershorts",
         "name": "Shorts & Short Rompers"
       }
     },
@@ -35,7 +35,7 @@
       "pk": 5,
       "model": "shop.category",
       "fields": {
-        "category_slug": "accessories",
+        "slug": "accessories",
         "name": "Accessories"
       }
     },
@@ -43,7 +43,7 @@
       "pk": 6,
       "model": "shop.category",
       "fields": {
-        "category_slug": "new_season",
+        "slug": "new_season",
         "name": "New Season"
       }
     }
