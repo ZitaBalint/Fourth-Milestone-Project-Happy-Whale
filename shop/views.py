@@ -24,4 +24,4 @@ def item_detail(request, slug):
         'item': item,
     }
 
-    return render(request, 'items/detail.html', context)
+    return render(request, 'items/item_detail.html', context)
