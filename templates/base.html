@@ -58,9 +58,9 @@
     <div id-="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
       
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
-        <form method="GET" action="">
+        <form method="GET" action="{% url 'shop:shop' %}">
           <div class="imput-group d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control me-2" type="text"  name="query" placeholder="Search" aria-label="Search">
         </div> 
           <div class="input-group-append">
           <button class="btn btn-outline-success" type="submit">
