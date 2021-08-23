@@ -78,6 +78,27 @@
         </div>
     </div>
 
+  <!---------------6 shop images basic hrml was copied from my original project---------------------------->
+  <div class="container-fluid" id="shop-container">
+    <div class="row col-12" id="shop-alert">
+        <div class="shop-alert-content col-12-copy-container">
+            <h1>Shop by category</h1>
+        </div>
+    </div>
+
+    <div class="container shop-container"> 
+        <div class="row shop-banner col-12 no-gutter">
+            <div class="col-xl-2 col-md-4 col-6">
+                {% for category in categories %}
+                <a href="{{ category.get_absolute_url }}">
+                    <div class="col-12-copy-container">
+                        <img class="w-100 d-block" src="" alt="Green leggings" />
+                        <h2>{{ category.name }}</h2>
+                        {% endfor %}
+                    </div>
+                </a>
+            </div>
+
  <!-----------Our story and donation copied from the original project ------------>
  <div class="main-section-2">
     <div class="bg-image">
