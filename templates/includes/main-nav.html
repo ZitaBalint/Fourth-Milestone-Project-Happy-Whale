@@ -1,37 +1,36 @@
 
 
-      <div class="offcanvas offcanvas-end" id="offcanvasRight" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas offcanvas-end" id="offcanvasRight" tabindex="-1" id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Menu</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-          <ul class="nav-left navbar-nav nav-fill flex-column flex-lg-row">
-              <li class="nav-item active">
-                  <a class="nav-link" href="#"><i class="fas fa-igloo"></i>Home</a>
-              </li>
-                                  <!---------------Navbar Drop down for shopping page Bootstrap ----->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  </i>Shop</a>
-                  <div class="dropdown-menu">
-                      <a class="dropdown-item" href="shop.html">Leggings</a>
-                      <a class="dropdown-item" href="shop.html">Rompers</a>
-                      <a class="dropdown-item" href="shop.html">Dresses</a>
-                      <a class="dropdown-item" href="shop.html">Shorts & Short Rompers</a>
-                      <a class="dropdown-item" href="shop.html">Accessories</a>
-                      <a class="dropdown-item" href="shop.html">Seasonal Prints</a>
-                  </div>
-              </li>
+          <h5 id="offcanvasRightLabel">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class=" navbar-nav nav-fill flex-column flex-lg-row">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><i class="fas fa-igloo"></i>Home</a>
+            </li>
+            <!---------------Navbar Drop down for shopping page Bootstrap ----->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                </i>Shop</a>
+                
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{% url 'shop:shop' %}">All Items</a>
+                {% for category in categoryies %}
+                <a class="dropdown-item" href="{{ category.get_absolute_url }}">{{ category.name|title }}</a>
+                {% endfor %}
+              </div>
+              
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html"><i class="fas fa-camera-retro"></i>Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="info.html"><i class="fas fa-address-book"></i>Info</a>
+            </li>
           </ul>
-          <ul class="nav-right navbar-nav nav-fill ml-auto flex-column flex-lg-row">
-              <li class="nav-item">
-                  <a class="nav-link" href="gallery.html"><i class="fas fa-camera-retro"></i>Gallery</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="info.html"><i class="fas fa-address-book"></i>Info</a>
-              </li>
-          </ul>
-          </div>
-      </div>
-  
+        </div>

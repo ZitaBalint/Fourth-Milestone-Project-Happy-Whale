@@ -15,6 +15,14 @@ def shop_items(request):
     return render(request, 'items/items.html', context)
 
 
+def items_category(request, category_slug):
+    """ shows specific category of items """
+
+    category = get_object_or_404(Category, slug=category_slug)
+    items = Item.objects.filter(category=category)
+    return render(request, 'category/items_category.html', {'category': category, 'items': items})    
+
+
 def item_detail(request, slug):
     """ Show a specific products of the shop """
 
@@ -26,15 +34,3 @@ def item_detail(request, slug):
 
     return render(request, 'items/item_detail.html', context)
 
-
-def items_category(request, category_slug):
-    """ shows specific category of items """
-
-    category = get_object_or_404(Category, slug=category_slug)
-
-    context = {
-        'category': category,
-    }
-
-    items = Item.objects.filter(category=category)
-    return render(request, 'category/items_category.html', context, {'items': items})
