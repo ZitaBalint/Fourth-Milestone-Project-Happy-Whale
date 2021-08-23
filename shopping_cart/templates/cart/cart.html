@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="cointer container-fluid">
+    <div class="row">
+        <div class="col-md-7 col-12">
+            <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ item.image_url }}">
+        </div>
+        <div class="col-md-5 col-12">
+            <h2 class="mb-o h-4">{{ item.name }}</h2>
+            <p>{{ item.price }}</p>
+            <p>{{ item.review_rating }} /5</p>
+            <div>
+                <p>
+                    {{ item.item_description }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

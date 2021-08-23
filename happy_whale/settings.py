@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "bootstrap5",
     'home',
     'shop',
+    'shopping_cart'
 ]
 
 MIDDLEWARE = [
