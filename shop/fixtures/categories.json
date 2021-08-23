@@ -4,7 +4,8 @@
       "model": "shop.category",
       "fields": {
         "slug": "leggings",
-        "name": "Leggings"
+        "name": "Leggings",
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563796/Happy%20Whale/IMG_1083_wur0qp.jpg"
       }
     },
     {
@@ -12,7 +13,8 @@
       "model": "shop.category",
       "fields": {
         "slug": "rompers",
-        "name": "Rompers"
+        "name": "Rompers",
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563198/Happy%20Whale/IMG_1076_jn0xfc.jpg"
       }
     },
     {
@@ -20,7 +22,8 @@
       "model": "shop.category",
       "fields": {
         "slug": "dresses",
-        "name": "Dresses"
+        "name": "Dresses",
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563156/Happy%20Whale/IMG_1074_inx3nw.jpg"
       }
     },
     {
@@ -28,7 +31,8 @@
       "model": "shop.category",
       "fields": {
         "slug": "shorts_rompershorts",
-        "name": "Shorts & Short Rompers"
+        "name": "Shorts & Short Rompers",
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629563779/Happy%20Whale/IMG_1082_ixvfz6.jpg"
       }
     },
     {
@@ -36,15 +40,17 @@
       "model": "shop.category",
       "fields": {
         "slug": "accessories",
-        "name": "Accessories"
+        "name": "Accessories",
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1629562983/Happy%20Whale/IMG_1067_c495cm.jpg"
       }
     },
     {
       "pk": 6,
       "model": "shop.category",
       "fields": {
-        "slug": "new_season",
-        "name": "New Season"
+        "slug": "giftcard",
+        "name": "Gifr Card",
+        "image_url": "https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605457689/Rest%20of%20the%20site/IMG_8630_dtyusv.jpg"
       }
     }
   ]

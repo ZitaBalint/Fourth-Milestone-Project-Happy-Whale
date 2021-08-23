@@ -80,51 +80,63 @@
 
   <!---------------6 shop images basic hrml was copied from my original project---------------------------->
   <div class="container-fluid" id="shop-container">
-    <div class="row col-12" id="shop-alert">
-        <div class="shop-alert-content col-12-copy-container">
-            <h1>Shop by category</h1>
-        </div>
-    </div>
+      <div class="row col-12" id="shop-alert">
+          <div class="shop-alert-content col-12-copy-container">
+              <h1>Shop by category</h1>
+          </div>
+      </div>
 
-    <div class="container shop-container"> 
-        <div class="row shop-banner col-12 no-gutter">
-            <div class="col-xl-2 col-md-4 col-6">
-                {% for category in categories %}
-                <a href="{{ category.get_absolute_url }}">
-                    <div class="col-12-copy-container">
-                        <img class="w-100 d-block" src="" alt="Green leggings" />
-                        <h2>{{ category.name }}</h2>
-                        {% endfor %}
-                    </div>
-                </a>
-            </div>
+      <div class="container shop-container">
+          <div class="row shop-banner col-12 ">
+            {% for category in categories %}
+              <div class="col-xl-2 col-md-4 col-6"> 
+                  <a href="{{ category.get_absolute_url }}">
+                      <div class="col-12-copy-container">
+                          <img class="w-100 d-block" src="{{ category.image_url }}" alt="{{ category.name }}" />
+                          <h2>{{ category.name }}</h2>
+                      </div>
+                  </a>
+              </div>
+              {% endfor %}
+          </div>
+      </div>
 
- <!-----------Our story and donation copied from the original project ------------>
- <div class="main-section-2">
-    <div class="bg-image">
-        <div class="container text-container">
-            <div class="row bg-text">
-                <h1>Our Story</h1>
-                <div class="col-12">
-                    <p>
-                        Established in 2018 and run by identical twins Emily and Victoria Bradley. Happy Whale is a small UK business which specialises in children's clothing aged 0-6 years. We have designed a range of
-                        comfortable, easy wear clothing that is practical and perfect for your little ones as they grow. Having worked as nannies for over 10 years we understand the need for durable clothes that are also
-                        stylish too. We use only the highest quality fabrics which are incredibly kind and comfortable for babies and toddlers. All of our clothing is machine washable.
-                    </p>
-                </div>
-                <h1>Our Mission</h1>
-                <div class="col-12">
-                    <p>
-                        Our recent travels motivated us to create a company that not only makes contemporary, ethical clothing but will help towards saving our precious planet too. Plastic pollution in the world’s oceans is
-                        one of the biggest environmental issues of our time. Therefore, for every sale a donation will be made to the Marine Conservation Society, helping to keep our marine animals and whales happy for the
-                        foreseeable future. We really hope you like what we do as much as we enjoy making it. x
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+
+      <!-----------Our story and donation copied from the original project ------------>
+      <div class="main-section-2">
+          <div class="bg-image">
+              <div class="container text-container">
+                  <div class="row bg-text">
+                      <h1>Our Story</h1>
+                      <div class="col-12">
+                          <p>
+                              Established in 2018 and run by identical twins Emily and Victoria Bradley. Happy Whale is
+                              a small UK business which specialises in children's clothing aged 0-6 years. We have
+                              designed a range of
+                              comfortable, easy wear clothing that is practical and perfect for your little ones as they
+                              grow. Having worked as nannies for over 10 years we understand the need for durable
+                              clothes that are also
+                              stylish too. We use only the highest quality fabrics which are incredibly kind and
+                              comfortable for babies and toddlers. All of our clothing is machine washable.
+                          </p>
+                      </div>
+                      <h1>Our Mission</h1>
+                      <div class="col-12">
+                          <p>
+                              Our recent travels motivated us to create a company that not only makes contemporary,
+                              ethical clothing but will help towards saving our precious planet too. Plastic pollution
+                              in the world’s oceans is
+                              one of the biggest environmental issues of our time. Therefore, for every sale a donation
+                              will be made to the Marine Conservation Society, helping to keep our marine animals and
+                              whales happy for the
+                              foreseeable future. We really hope you like what we do as much as we enjoy making it. x
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </main>
 
 {% endblock %}

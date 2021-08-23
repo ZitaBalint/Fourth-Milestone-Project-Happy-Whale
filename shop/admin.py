@@ -19,6 +19,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'slug',
         'name',
+        'image_url',
     )
 
     
