@@ -25,8 +25,8 @@
                     {{ item.item_description }}
                     
                 </p>
-                <label for="greenstar">Select size:</label>
-                <select name="greenstarleggings" id="greenstar">
+                <label for="select-size">Select size:</label>
+                <select class="form-select" name="{{ item.pk }}" id="select-size">
                   <option value="none">Select</option>
                   <option value="0-3months">0-3 Months</option>
                   <option value="3-6months">3-6 Months</option>
@@ -38,37 +38,17 @@
                   <option value="4years">4 Years</option>
                   <option value="5years">5 Years</option>
                   <option value="6years">6 Years</option>
-                  <option value="specialsize">Special Size</option>
                 </select>
-                <!---Quantity button from Code Institute tuorial-->
-                <div class="col-12">
-                  <p class="mt-3"><strong>Quantity:</strong></p>
-                  <div class="form-group w-50">
-                      <div class="input-group">
-                          <div class="input-group-prepend">
-                              <button class="decrement-qty btn btn-black rounded-0" 
-                                  data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
-                                  <span class="icon">
-                                      <i class="fas fa-minus"></i>
-                                  </span>
-                              </button>
-                          </div>
-                          <input class="form-control qty_input" type="number"
-                              name="quantity" value="1" min="1" max="99"
-                              data-item_id="{{ item.id }}"
-                              id="id_qty_{{ item.id }}">
-                          <div class="input-group-append">
-                              <button class="increment-qty btn btn-black rounded-0"
-                                  data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
-                                  <span class="icon">
-                                      <i class="fas fa-plus"></i>
-                                  </span>
-                              </button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            </div>
+                <label for="select-quantity">Select Quantity</label>
+                  <select class="form-select" name="{{ item.pk }}" id="select-quantity">
+                    <option selected>Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                
           <button type="submit" id="add-button" value={{item.id}} class="btn btn-secondary btn-sm">Add to basket</button>  
           <button type="submit" class="btn btn-secondary btn-sm" onClick="javascript:history.go(-1);">Keep Shopping</button> 
         </div>
