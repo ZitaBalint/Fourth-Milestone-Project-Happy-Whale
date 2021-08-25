@@ -74,8 +74,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # Added to able to access the categories through the whole project as it used to drop downs
+                # access the categories through the whole project
                 'shop.context_processors.categories',
+                # access shoping cart through whole project
+                'shopping_cart.context_processors.cart',
             ],
         },
     },
