@@ -26,7 +26,7 @@
                     
                 </p>
                 <label for="select-size">Select size:</label>
-                <select class="form-select" name="{{ item.pk }}" id="select-size">
+                <select class="form-select"  id="select-size">
                   <option value="none">Select</option>
                   <option value="0-3months">0-3 Months</option>
                   <option value="3-6months">3-6 Months</option>
@@ -39,8 +39,8 @@
                   <option value="5years">5 Years</option>
                   <option value="6years">6 Years</option>
                 </select>
-                <label for="select-quantity">Select Quantity</label>
-                  <select class="form-select" name="{{ item.pk }}" id="select-quantity">
+                <label for="select">Select Quantity</label>
+                  <select class="form-select" id="select-quantity">
                     <option selected>Select</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -49,7 +49,7 @@
                     <option value="5">5</option>
                   </select>
                 
-          <button type="submit" id="add-button" value={{item.id}} class="btn btn-secondary btn-sm">Add to basket</button>  
+          <button type="submit" id="add-button" value="{{item.id}}" class="btn btn-secondary btn-sm">Add to basket</button>  
           <button type="submit" class="btn btn-secondary btn-sm" onClick="javascript:history.go(-1);">Keep Shopping</button> 
         </div>
         <div>
@@ -95,5 +95,25 @@
     </div>
 </div>
 
+<script>
+  $(document).on('click', '#add-button', function (e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '{% url "cart:cart_add" %}',
+        data: {
+            itemid: $('#add_button').val(),
+            itemsize: $('#select-size option:selected').val(),
+            itemquantity: $('#select-quantity option:selected').val(),
+            csrfmiddlewaretoken: "{{csrf_token}}",
+            action: 'post'
+        },
+        success: function (cart) {
+            document.getElementById("cart-quantity").innerHTML = JSON.item_quantity
+        },
+        error: function (xhr, errmsg, err) {}
+    });
+})
+</script>
 
 {% endblock %}

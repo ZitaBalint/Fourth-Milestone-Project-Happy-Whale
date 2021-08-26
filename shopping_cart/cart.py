@@ -14,14 +14,8 @@ class Cart():
         self.cart = cart
 
     def add(self, item, quantity, size):
-        item_id = item.pk
 
-        if item_id not in self.cart:
-            self.cart[item_id] = {
-                'price': item.price,
-                'quantity': quantity,
-                'size': size
-                }
+        item_id = item.id
 
         if item_id in self.cart:
             self.cart[item_id]['quantity'] = quantity
@@ -29,7 +23,7 @@ class Cart():
 
         else:
             self.cart[item_id] = {
-                'price': str(item.price),
+                'price': item.price,
                 'quantity': quantity,
                 'size': size
             }
@@ -37,4 +31,3 @@ class Cart():
   
     def save(self):
         self.session.modified = True
-
