@@ -28,7 +28,15 @@
         </li>
         <li class="list-inline-item">
       <a class="nav-link" href="{% url 'cart:cart_total' %}">
-        <div id="cart-quatity" class="d-inline-flex"></div>
+        {% with total_quantity=cart|length %}
+        <div id="cart-quantity" class="d-inline-flex">
+          {% if total_quantity > 0 %}
+          {{ total_quantity }}
+          {% else %}
+          0
+          {% endif %}
+        </div>
+        {% endwith%}
         <i class="fas fa-shopping-basket fa-lg"></i>
       </a>
     </li>
