@@ -16,7 +16,7 @@ def shop_items(request):
     if 'query' in request.GET:
         query = request.GET['query']
         if not query:
-            messages.error(request, "Please enter a your search")
+            messages.error(request, "Please enter your search")
             return redirect(reverse('items'))
             
         queries = Q(name__icontains=query) | Q(item_description__icontains=query)

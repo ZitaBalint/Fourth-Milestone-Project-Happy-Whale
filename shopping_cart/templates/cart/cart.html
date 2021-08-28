@@ -89,7 +89,7 @@
           url: '{% url "cart:cart_delete" %}',
           data: {
               itemid: 'itmid',
-              csrfmiddletoken: "{{csrf_token}}",
+              csrfmiddlewaretoken: "{{csrf_token}}",
               action: 'post'
           },
           success: function (cart) {
@@ -112,7 +112,7 @@
               itemid: 'itmid',
               itemquantity: $('#select'+itmid+' option:selected').text(),
               //same for the size as well 
-              csrfmiddletoken: "{{csrf_token}}",
+              csrfmiddlewaretoken: "{{csrf_token}}",
               action: 'post'
           },
           success: function (cart) {

@@ -27,16 +27,16 @@
           </a>
         </li>
         <li class="list-inline-item">
-      <a class="nav-link" href="{% url 'cart:cart_total' %}">
-        {% with total_quantity=cart|length %}
-        <div id="cart-quantity" class="d-inline-flex">
-          {% if total_quantity > 0 %}
-          {{ total_quantity }}
-          {% else %}
-          0
-          {% endif %}
-        </div>
-        {% endwith%}
+          <a class="nav-link" href="{% url 'cart:cart_total' %}">
+            {% with total_quantity=cart|length %}
+            <div id="cart-quantity" class="d-inline-flex">
+              {% if total_quantity > 0 %}
+                {{ total_quantity }}
+              {% else %}
+                0
+              {% endif %}
+            </div>
+            {% endwith%}
         <i class="fas fa-shopping-basket fa-lg"></i>
       </a>
     </li>

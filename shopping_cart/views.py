@@ -8,16 +8,17 @@ from shop.models import Item
 
 
 def cart_total(request):
-    return render(request, 'cart/cart.html', {"total_quantity": 12})
+    cart = Cart(request)
+    return render(request, 'cart/cart.html', {'cart': cart})
 
 
 def cart_add(request):
     cart = Cart(request)
     if request.POST.get('action') == 'post':
-        item_id = int(request.POST.get('itemid'))
+        item_id = str(request.POST.get('itemid'))
         # item_size = str(request.POST.get('itemsize'))
         item_quantity = int(request.POST.get('itemquantity'))
-        item = get_object_or_404(Item, pk=item_id)
+        item = get_object_or_404(Item, id=item_id)
         cart.add(item=item, quantity=item_quantity)  # add size=item_size
         cartquantity = cart.__len__()
         response = JsonResponse({
@@ -30,7 +31,7 @@ def cart_add(request):
 def cart_delete(request):
     cart = Cart(request)
     if request.POST.get('action') == 'post':
-        item_id = int(request.POST.get('itemid'))
+        item_id = request.POST.get('itemid')
         cart.delete(item=item_id)
         cartquantity = cart.__len__()
         carttotal = cart.unit_total()

@@ -104,9 +104,9 @@
         type: 'POST',
         url: '{% url "cart:cart_add" %}',
         data: {
-            itemid: $('#add_button').val(),
+            itemid: $('#add-button').val(),
             //itemsize: $('#select-size option:selected').val(),
-            itemquantity: $('#select-quantity option:selected').val(),
+            itemquantity: $('#select-quantity option:selected').text(),
             csrfmiddlewaretoken: "{{csrf_token}}",
             action: 'post'
         },

@@ -1,8 +1,13 @@
 from decimal import Decimal
 from shop.models import Item
+from django.conf import settings
 
 
 class Cart():
+
+    """ 
+    Creates a session cookie for cart
+    """
 
     def __init__(self, request):
         
@@ -15,6 +20,10 @@ class Cart():
 
     def add(self, item, quantity):  # add size
 
+        """
+        Adding to session data
+        """
+
         item_id = str(item.id)
 
         if item_id in self.cart:
@@ -24,15 +33,15 @@ class Cart():
         else:
             self.cart[item_id] = {
                 'price': str(item.price),
-                'quantity': int(quantity),
+                'quantity': quantity,
                 # 'size': size
             }
-        
+
         self.save()
 
     def __iter__(self):
         item_ids = self.cart.keys()
-        items = Item.items.filter(id_in=item_ids)
+        items = Item.objects.filter(id__in=item_ids)
         cart = self.cart.copy()
 
         for item in items:
@@ -44,10 +53,10 @@ class Cart():
             yield item
 
     def __len__(self):
-        return sum(unit['quantity'] for unit in self.cart.values)  # do i need a size here?
+        return sum(unit['quantity'] for unit in self.cart.values())  # do i need a size here?
   
     def unit_total(self):
-        return sum(Decimal(unit['price'] * unit['quantity'] for unit in self.cart.values))
+        return sum(Decimal(unit['price']) * unit['quantity'] for unit in self.cart.values())
 
     def delete(self, item):  # and later add the size as well
         item_id = str(item)
