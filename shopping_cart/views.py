@@ -16,15 +16,15 @@ def cart_add(request):
     cart = Cart(request)
     if request.POST.get('action') == 'post':
         item_id = str(request.POST.get('itemid'))
-        # item_size = str(request.POST.get('itemsize'))
+        item_size = str(request.POST.get('itemsize'))
         item_quantity = int(request.POST.get('itemquantity'))
         item = get_object_or_404(Item, id=item_id)
-        cart.add(item=item, quantity=item_quantity)  # add size=item_size
+        cart.add(item=item, quantity=item_quantity, size=item_size)
 
         cartquantity = cart.__len__()
         response = JsonResponse({
             'quantity': cartquantity,
-            # 'size': item_size
+            'size': item_size
         })
         return response
 
@@ -49,7 +49,8 @@ def cart_update(request):
     if request.POST.get('action') == 'post':
         item_id = int(request.POST.get('itemid'))
         item_quantity = int(request.POST.get('itemquantity'))
-        cart.update(item=item_id, quantity=item_quantity)  # caheck this peace of code 
+        item_size = str(request.POST.get('itemsize'))
+        cart.update(item=item_id, quantity=item_quantity, size=item_size)
         cartquantity = cart.__len__()
         carttotal = cart.unit_total()
         response = JsonResponse({

@@ -78,10 +78,24 @@
       <div class="col-6 col-lg-4 my-auto py-1 py-lg-0 ">
         <div class="list-inline my-2 my-lg-0">
           <ul>
-            <li class="list-inline-item">
-              <a class="nav-link" href="#">
+            <li class="list-inline-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="user-options" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user fa-lg"></i>
               </a>
+              <div class="dropdown-menu" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                  {% if request.user.is_superuser %}
+                    <a class="dropdown-item" href="#">Admin</a>
+                  {% endif %}
+                  <a class="dropdown-item" href="#">My Account</a>
+                  <a class="dropdown-item" href="#">Sign Out</a>
+                {% else %}
+                  <a class="dropdown-item" href="#">Register</a>
+                  <a class="dropdown-item" href="#">Sign In/a>
+                {% endif %}
+              </div>
+              
             </li>
             <li class="list-inline-item">
               <a class="nav-link" href="{% url 'cart:cart_total' %}">

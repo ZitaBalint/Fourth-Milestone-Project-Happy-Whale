@@ -17,7 +17,7 @@ class Cart():
             cart = self.session['cartkey'] = {}
         self.cart = cart
 
-    def add(self, item, quantity):  # add size
+    def add(self, item, quantity, size):  
 
         """
         Adding to session data
@@ -27,13 +27,13 @@ class Cart():
 
         if item_id in self.cart:
             self.cart[item_id]['quantity'] = quantity
-            # self.cart[item_id]['size'] = size
+            self.cart[item_id]['size'] = size
 
         else:
             self.cart[item_id] = {
                 'price': str(item.price),
                 'quantity': int(quantity),
-                # 'size': size
+                'size': size
             }
 
         self.save()
@@ -53,12 +53,12 @@ class Cart():
             yield unit
 
     def __len__(self):
-        return sum(unit['quantity'] for unit in self.cart.values())  # do i need a size here?
+        return sum(unit['quantity'] for unit in self.cart.values())
 
     def unit_total(self):
         return sum(Decimal(unit['price']) * unit['quantity'] for unit in self.cart.values())
             
-    def delete(self, item):  # and later add the size as well
+    def delete(self, item):
         item_id = str(item)
 
         if item_id in self.cart:
@@ -66,11 +66,12 @@ class Cart():
         
         self.save()
 
-    def update(self, item, quantity):  # and later add the size as well
+    def update(self, item, quantity, size):
         item_id = str(item)
 
         if item_id in self.cart:
             self.cart[item_id]['quantity'] = quantity
+            self.cart[item_id]['size'] = size
         
         self.save()
     
