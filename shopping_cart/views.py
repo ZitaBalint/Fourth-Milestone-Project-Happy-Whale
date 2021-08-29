@@ -20,6 +20,7 @@ def cart_add(request):
         item_quantity = int(request.POST.get('itemquantity'))
         item = get_object_or_404(Item, id=item_id)
         cart.add(item=item, quantity=item_quantity)  # add size=item_size
+
         cartquantity = cart.__len__()
         response = JsonResponse({
             'quantity': cartquantity,
@@ -31,9 +32,10 @@ def cart_add(request):
 def cart_delete(request):
     cart = Cart(request)
     if request.POST.get('action') == 'post':
-        item_id = request.POST.get('itemid')
+        item_id = str(request.POST.get('itemid'))
         cart.delete(item=item_id)
         cartquantity = cart.__len__()
+        
         carttotal = cart.unit_total()
         response = JsonResponse({
             'quantity': cartquantity,
