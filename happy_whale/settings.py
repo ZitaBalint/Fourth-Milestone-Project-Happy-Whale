@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'shop',
     'shopping_cart',
     'profiles',
+    'crispy_forms',
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -61,6 +63,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'happy_whale.urls'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 TEMPLATES = [
     {
@@ -81,6 +86,10 @@ TEMPLATES = [
                 # access shoping cart through whole project
                 'shopping_cart.context_processors.cart',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
