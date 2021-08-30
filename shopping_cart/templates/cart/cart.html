@@ -102,7 +102,6 @@
             data: {
                 itemid: $(this).data('index'),
                 itemquantity: $('#select' + itmid + ' option:selected').text(),
-                itemsize: $('#select' + itmid + ' option:selected').text(),
                 itemsize: $('#select-size' + itmid + ' option:selected').text(),
                 csrfmiddlewaretoken: "{{csrf_token}}",
                 action: 'post'
@@ -110,7 +109,7 @@
             success: function (cart) {
                 document.getElementById("total").innerHTML = cart.total
                 document.getElementById("cart-quantity").innerHTML = cart.quantity
-                //document.getElementById("cart-quantity").innerHTML = cart.subtotal
+               // document.getElementById("subtotal").innerHTML = unit.item_total
             },
             error: function (xhr, errmsg, err) {}
         });

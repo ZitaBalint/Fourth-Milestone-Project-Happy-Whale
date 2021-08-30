@@ -55,8 +55,8 @@ class Cart():
     def __len__(self):
         return sum(unit['quantity'] for unit in self.cart.values())
 
-    # def subtotal(self, price, quantity):
-        # return unit['price'] * unit['quantity']
+    # def subtotal(self):
+        # return self.quantity * self.item.price
 
     def unit_total(self):
         return sum(Decimal(unit['price']) * unit['quantity'] for unit in self.cart.values())
@@ -78,7 +78,6 @@ class Cart():
         
         self.save()
     
-
     def save(self):
         self.session.modified = True
 

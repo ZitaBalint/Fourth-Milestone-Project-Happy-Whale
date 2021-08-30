@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 from shop.models import Item
+from django_countries.fields import CountryField
 
 # Create your models here.
 
@@ -16,12 +17,13 @@ class OrderDetails(models.Model):
     title = models.CharField(max_length=3, choices=TITLE_CHOICES)
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
-    email_address = models.EmailField
-    adress_line1 = models.CharField(max_length=70, null=False, blank=False)
-    adress_line1 = models.CharField(max_length=70, null=True, blank=True)
+    email_address = models.EmailField(default='email address')
+    adress_line1 = models.CharField(max_length=70, blank=False)
+    adress_line2 = models.CharField(max_length=70, blank=True)
     town_or_city = models.CharField(max_length=50, null=False, blank=False)
-    county = models.CharField(max_length=70, null=False, blank=False)
+    country = CountryField(default='Select Country')
     postcode = models.CharField(max_length=10, null=False, blank=False)
+    date = models.DateTimeField(auto_now_add=True)
     unit_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
 
     def _generate_order_number(self):
