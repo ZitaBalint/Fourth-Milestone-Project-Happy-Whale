@@ -2,8 +2,6 @@ from django.db import models
 from django.urls import reverse
 
 
-
-
 class Category(models.Model):
 
     class Meta:
