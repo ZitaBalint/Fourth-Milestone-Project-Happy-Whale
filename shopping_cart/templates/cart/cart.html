@@ -57,6 +57,7 @@
                         <button type="submit" class="btn btn-secondary btn-sm" onClick="javascript:history.go(-1);">Keep
                             Shopping</button>
                     </div>
+                    <a role="button" class="btn btn-primary btn-lg" href='{% url "checkout:cart" %}' type="submit">Continue to checkout</a>
                 </div>
             </div>
             {% endwith %}

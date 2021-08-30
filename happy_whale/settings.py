@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'shop_checkout',
     'django_countries',
-    'payment',
+    'stripe',
+
 ]
 
 MIDDLEWARE = [
@@ -124,7 +125,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
