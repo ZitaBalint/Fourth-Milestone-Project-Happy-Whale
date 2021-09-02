@@ -4,4 +4,5 @@ from django.shortcuts import render
 
 
 def profile(request):
+    """ Return profile.html page """
     return render(request, 'profile/profile.html')

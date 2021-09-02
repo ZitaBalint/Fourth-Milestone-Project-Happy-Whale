@@ -317,6 +317,11 @@ ul {
   word-spacing: 2px;
 }
 
+.ourservice-row .card-footer {
+  padding: 0;
+}
+/* | | --------------- Primary button ------------- */
+
 .btn-primary {
   width: 100%;
   background-color: #8a9a5b;
@@ -327,10 +332,6 @@ ul {
 .btn-primary:hover {
   background-color: #f4db4d;
   color: #8a9a5b;
-}
-
-.ourservice-row .card-footer {
-  padding: 0;
 }
 
 /* | | ---------------------------- SHOP PAGE -----------------------------  */
@@ -421,126 +422,20 @@ ul {
   padding: 15px 0 20px;
 }
 
-.shopitems-polaroid img {
-  max-width: 260px;
-  height: auto;
-}
-
-.shopitems-polaroid {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 15px;
-  padding-bottom: 10px;
-}
-
-.shop-form {
-  min-width: 130px;
-  max-width: 260px;
-}
-
-.shop-form label {
-  letter-spacing: 2px;
-  padding-top: 10px;
-  font-size: clamp(12px, 1.3vw, 17px);
-}
-
-.shop-form select {
-  font-size: clamp(12px, 1.3vw, 17px);
-}
-
-.shop-form input {
-  min-width: 130px;
-  width: 40vw;
-  max-width: 220px;
-  text-transform: uppercase;
-  font-family: "Amatic SC", cursive;
-  margin: 5px 0 10px;
-  box-sizing: border-box;
-  background-color: #8a9a5b;
-  border-radius: 0;
-  border-style: none;
-  font-size: large;
-  letter-spacing: 3px;
-  font-weight: 700;
-  color: #ddebe4;
-  outline: 0;
-}
-
-.shopitems-size h4 {
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  padding-top: 10px;
-  font-size: clamp(15px, 1.5vw, 20px);
-}
-
-.shopitems-size p {
-  margin-bottom: 0;
-  font-size: clamp(12px, 1.3vw, 18px);
-}
-
-.giftcard-container {
-  margin: auto;
-  max-width: 1300px;
-}
-
-.giftcard-row {
-  display: block;
-  text-align: center;
-  margin: auto;
-  background-color: #ffdb4d;
-  color: #ff471a;
-  padding: 10px 5px 15px;
-}
-
-.giftcard-row button {
-  padding: 5px 40px;
+.shop-cards {
   border: none;
-  background: #ff471a;
-  color: #f4db4d;
-  font-size: clamp(12px, 2vw, 18px);
 }
 
-.giftcard-row h2 {
-  letter-spacing: 4px;
-  font-size: clamp(20px, 3vw, 35px);
+.item-title {
+  color:#696969
 }
 
-.giftcard-row p {
-  font-size: clamp(12px, 2vw, 18px);
-  letter-spacing: 2px;
+.card-title a {
+  font-family:  "Amatic SC", cursive;
+  color:#696969
 }
 
-.christmas-banner .jumbotron {
-  padding: 100px 50px;
-  margin-top: 30px;
-  background-image: -webkit-linear-gradient(rgba(247, 243, 243, 0.3), rgba(247, 243, 243, 0.3)), url(https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605642086/Rest%20of%20the%20site/erin-mckenna-kFbSKhukfIQ-unsplash_1_1_lliva7.png);
-  background-image: linear-gradient(rgba(247, 243, 243, 0.3), rgba(247, 243, 243, 0.3)), url(https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605642086/Rest%20of%20the%20site/erin-mckenna-kFbSKhukfIQ-unsplash_1_1_lliva7.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 0;
-}
 
-.christmas-banner .jumbotron h3 {
-  font-weight: 700;
-  letter-spacing: 4px;
-  padding-top: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: clamp(25px, 3vw, 40px);
-  color: #ff0000;
-}
-
-.christmas-banner .jumbotron p {
-  font-size: clamp(12px, 1.5vw, 22px);
-  letter-spacing: 2px;
-  line-height: 1.7;
-  word-spacing: 2px;
-  color: #ff0000;
-}
 
 /* | | ---------------------------- GALLERY PAGE PAGE -----------------------------  */
 
@@ -1178,10 +1073,10 @@ td {
     display: inline-block;
   }
 
-  .ml-auto,
+  /* .ml-auto,
     .mx-auto {
     margin-left: 0 !important;
-  }
+  }*/
 
   
 }

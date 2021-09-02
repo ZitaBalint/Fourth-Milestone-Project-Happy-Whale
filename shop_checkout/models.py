@@ -4,6 +4,7 @@ from shop.models import Item
 from django_countries.fields import CountryField
 
 # Create your models here.
+# Followed the Code Institute Tutorial
 
 TITLE_CHOICES = (
     ('MR', 'Mr.'),
@@ -24,7 +25,8 @@ class OrderDetails(models.Model):
     country = CountryField(default='Select Country')
     postcode = models.CharField(max_length=10, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
-    unit_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
+    unit_total = models.DecimalField(max_digits=6, decimal_places=2,
+                                     null=False, default=0)
 
     def _generate_order_number(self):
         """
@@ -46,11 +48,15 @@ class OrderDetails(models.Model):
 
 
 class ItemOrder(models.Model):
-    order = models.ForeignKey(OrderDetails, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    item = models.ForeignKey(Item, null=False, blank=False, on_delete=models.CASCADE)
+    order = models.ForeignKey(OrderDetails, null=False, blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='lineitems')
+    item = models.ForeignKey(Item, null=False, blank=False,
+                             on_delete=models.CASCADE)
     item_size = models.CharField(max_length=20, null=False, blank=False)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    item_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    item_total = models.DecimalField(max_digits=6, decimal_places=2,
+                                     null=False, blank=False, editable=False)
 
     def __str__(self):
-        return f'slug {self.item.sku} on order {self.order.order_number}'
+        return f'SKU {self.item.sku} on order {self.order.order_number}'
