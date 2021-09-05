@@ -56,7 +56,7 @@ class Cart():
         return sum(unit['quantity'] for unit in self.cart.values())
 
     # def subtotal(self):
-        # return self.quantity * self.item.price
+        # return self.unit.quantity * self.unit.price
 
     def unit_total(self):
         return sum(Decimal(unit['price']) * unit['quantity'] for unit in self.cart.values())

@@ -1,18 +1,18 @@
 from django.contrib import admin
-from .models import OrderDetails, ItemOrder
+from .models import OrderDetails, UnitOrder
 
 # Register your models here.
 
 
-class ItemOrderAdminInline(admin.TabularInline):
-    model = ItemOrder
-    readonly_fields = ('item_total',)
+class UnitOrderAdminInline(admin.TabularInline):
+    model = UnitOrder
+    readonly_fields = ('unit_total',)
 
 # The basic followed by Code Institute tutorial
 
 
 class OrderAdmin(admin.ModelAdmin):
-    inlines = (ItemOrderAdminInline,)
+    inlines = (UnitOrderAdminInline,)
 
     readonly_fields = ('order_number', 'date', 'unit_total',)
 

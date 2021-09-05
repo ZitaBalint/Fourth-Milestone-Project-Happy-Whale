@@ -2,6 +2,7 @@ from django.db import models
 import uuid
 from shop.models import Item
 from django_countries.fields import CountryField
+from django.conf import settings
 
 # Create your models here.
 # Followed the Code Institute Tutorial
@@ -47,16 +48,16 @@ class OrderDetails(models.Model):
         return self.order_number
 
 
-class ItemOrder(models.Model):
+class UnitOrder(models.Model):
     order = models.ForeignKey(OrderDetails, null=False, blank=False,
                               on_delete=models.CASCADE,
-                              related_name='lineitems')
-    item = models.ForeignKey(Item, null=False, blank=False,
+                              related_name='unit')
+    unit = models.ForeignKey(Item, null=False, blank=False,
                              on_delete=models.CASCADE)
-    item_size = models.CharField(max_length=20, null=False, blank=False)
+    unit_size = models.CharField(max_length=20, null=False, blank=False)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    item_total = models.DecimalField(max_digits=6, decimal_places=2,
+    unit_total = models.DecimalField(max_digits=6, decimal_places=2,
                                      null=False, blank=False, editable=False)
 
     def __str__(self):
-        return f'SKU {self.item.sku} on order {self.order.order_number}'
+        return f'sku {self.unit.sku} on order {self.order.order_number}'

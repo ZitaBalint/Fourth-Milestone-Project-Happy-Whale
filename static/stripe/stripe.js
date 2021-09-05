@@ -28,5 +28,29 @@ card.on('change', function(event) {
     }
 })
 
-var form = document.getElementById('payment-form'); 
+var form = document.getElementById('payment-form');
 
+form.addEventListener('submit', function(ev) {
+    ev.preventDefault();
+
+var firstName = document.getElementById("firstName").value;
+var lastName = document.getElementById("lastName").value;
+var addressLine = document.getElementById("addressLine").value; 
+var addressLine2 = document.getElementById("addressLine2").value;
+var postCode = document.getElementById("postCode").value;
+
+    stripe.confirmCardPayment(clientsecret, {
+        payment_method: {
+            card: card,
+            billing_details: {
+                address:{
+                    line1: addressLine,
+                    line2: addressLine2
+                },
+                name1: firstName,
+                name2: lastName
+            },
+        }
+    })
+
+})

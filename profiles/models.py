@@ -14,7 +14,8 @@ TITLE_CHOICES = (
 
 class UserProfile(models.Model):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    username = models.CharField(max_length=30, null=True)
     default_title = models.CharField(max_length=3, choices=TITLE_CHOICES)
     default_first_name = models.CharField(max_length=50,
                                           null=True, blank=True)
@@ -34,12 +35,12 @@ class UserProfile(models.Model):
                                         null=True, blank=True)
     
     def __str__(self):
-        return self.user.username
+        return self.username
 
     # Followed Code INstitute tutorial
 
     @receiver(post_save, sender=User)
-    def create_or_update_user_profile(sneder, instance, created, **kwargs):   
+    def create_or_update_user_profile(sender, instance, created, **kwargs):   
         if created:
             UserProfile.objects.create(user=instance)
 
