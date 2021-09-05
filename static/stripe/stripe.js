@@ -1,5 +1,5 @@
 // copied from offical Stripe documentation 
- var stripe = Stripe('pk_test_51JUDztBeU0R6ZOy2fetXqavkBpRlGSlJuxmnKORXEpFMbxF46utDA82pXXegqVIMbNNboMyYOSP1ktpzIV23kRh800jZl34vB5')
+var stripe = Stripe('pk_test_51JUDztBeU0R6ZOy2fetXqavkBpRlGSlJuxmnKORXEpFMbxF46utDA82pXXegqVIMbNNboMyYOSP1ktpzIV23kRh800jZl34vB5')
 
 var eleme = document.getElementById('submit');
 clientsecret = eleme.getAttribute('data-secret');
@@ -33,11 +33,11 @@ var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
 
-var firstName = document.getElementById("firstName").value;
-var lastName = document.getElementById("lastName").value;
-var addressLine = document.getElementById("addressLine").value; 
-var addressLine2 = document.getElementById("addressLine2").value;
-var postCode = document.getElementById("postCode").value;
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var addressLine = document.getElementById("addressLine").value; 
+    var addressLine2 = document.getElementById("addressLine2").value;
+    var postCode = document.getElementById("postCode").value;
 
     stripe.confirmCardPayment(clientsecret, {
         payment_method: {
@@ -50,6 +50,16 @@ var postCode = document.getElementById("postCode").value;
                 name1: firstName,
                 name2: lastName
             },
+        }
+    }).then(function(result) {
+        if (result.error) {
+            console.log('patment error')
+            console.log(result.error.message);
+        } else {
+            if (result.paymentIntent.status === 'succeeded') {
+                console.log('payment proccessed')
+                window.location.replace("http://127.0.0.1:8000/checkout/orderplaced")
+            }
         }
     })
 
