@@ -13,7 +13,7 @@ var style = {
     }
 };
 var card = elements.create("card", {styel: style});
-card.mount("#card-element");
+card.mount('#card-element');
 
 // Payments errors base was used from Stripe github and  Youtube tutorial
 
@@ -39,16 +39,25 @@ form.addEventListener('submit', function(ev) {
     var addressLine2 = document.getElementById("addressLine2").value;
     var postCode = document.getElementById("postCode").value;
 
+    console.log(firstName)
+    console.log(lastName)
+    console.log(addressLine)
+    console.log(addressLine2)
+    console.log(postCode)
+
+
+
     stripe.confirmCardPayment(clientsecret, {
         payment_method: {
             card: card,
             billing_details: {
                 address:{
                     line1: addressLine,
-                    line2: addressLine2
+                    line2: addressLine2,
+                    postal_code: postCode
                 },
-                name1: firstName,
-                name2: lastName
+                name: firstName+ " " +lastName
+                
             },
         }
     }).then(function(result) {
