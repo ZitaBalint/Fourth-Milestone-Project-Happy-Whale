@@ -81,3 +81,7 @@ class Cart():
     def save(self):
         self.session.modified = True
 
+    def clear(self):
+        # remove cart from the session
+        del self.session['cartkey']
+        self.save()

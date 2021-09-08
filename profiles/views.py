@@ -6,7 +6,7 @@ from shop_checkout.models import OrderDetails, UnitOrder
 
 def ordered(request):
     cart = Cart(request)
-    if request.POST.get('action') == 'ordered':
+    if request.POST.get('action') == 'post':
         user_id = request.user.id
         order_number = request.POST.get('order_number')
         carttotal = cart.unit_total()
@@ -39,5 +39,8 @@ def ordered(request):
             response = JsonResponse({'success': 'Order Created'})
             return response
 
+
+def payment_confirmation(data):
+    OrderDetails.objects.filer(order_number=data).update(billing_status=True)
 
 

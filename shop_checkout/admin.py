@@ -14,17 +14,17 @@ class UnitOrderAdminInline(admin.TabularInline):
 class OrderAdmin(admin.ModelAdmin):
     inlines = (UnitOrderAdminInline,)
 
-    readonly_fields = ('order_number', 'date', 'unit_total',)
+    readonly_fields = ('order_number', 'date_created', 'unit_total',)
 
-    fields = ('order_number', 'date', 'first_name', 'last_name',
+    fields = ('order_number', 'date_created', 'first_name', 'last_name',
               'email_address', 'adress_line1',
               'adress_line2', 'postcode', 'town_or_city',
               'country', 'unit_total',)
 
-    list_display = ('order_number', 'date', 'first_name',
+    list_display = ('order_number', 'date_created', 'first_name',
                     'last_name', 'unit_total',)
 
-    ordering = ('-date',)
+    ordering = ('-date_created',)
 
 
 admin.site.register(OrderDetails, OrderAdmin)

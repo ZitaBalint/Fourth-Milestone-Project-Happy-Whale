@@ -39,48 +39,42 @@ form.addEventListener('submit', function(ev) {
     var addressLine2 = document.getElementById("addressLine2").value;
     var postCode = document.getElementById("postCode").value;
 
-    console.log(firstName)
-    console.log(lastName)
-    console.log(addressLine)
-    console.log(addressLine2)
-    console.log(postCode)
 
-
-$.ajax({
-    type: "POST",
-    url: 'http://127.0.0.1:8000/checkout/ordered',
-    data: {
-        order_number: clientsecret,
-        csrfmiddlewaretoken: CSRF_TOKEN,
-        action: 'ordered',
-        },
-    success: function (json) {
-        console.log(json.success)
-
-    stripe.confirmCardPayment(clientsecret, {
-        payment_method: {
-            card: card,
-            billing_details: {
-                address: {
-                    line1: addressLine,
-                    line2: addressLine2,
-                    postal_code: postCode
-                },
-                name: firstName + " " + lastName
-
+    $.ajax({
+        type: "POST",
+        url: 'http://127.0.0.1:8000/checkout/ordered/ordered/',
+        data: {
+            order_number: clientsecret,
+            csrfmiddlewaretoken: CSRF_TOKEN,
+            action: 'post',
             },
-        }
-    }).then(function (result) {
-        if (result.error) {
-            console.log('patment error')
-            console.log(result.error.message);
-        } else {
-            if (result.paymentIntent.status === 'succeeded') {
-                console.log('payment proccessed')
-                window.location.replace("http://127.0.0.1:8000/checkout/orderplaced")
+        success: function (json) {
+            console.log(json.success)
+
+        stripe.confirmCardPayment(clientsecret, {
+            payment_method: {
+                card: card,
+                billing_details: {
+                    address: {
+                        line1: addressLine,
+                        line2: addressLine2,
+                        postal_code: postCode
+                    },
+                    name: firstName + " " + lastName
+
+                },
             }
-        }
-    });
-    },
-    });
+        }).then(function (result) {
+            if (result.error) {
+                console.log('patment error')
+                console.log(result.error.message);
+            } else {
+                if (result.paymentIntent.status === 'succeeded') {
+                    console.log('payment proccessed')
+                    window.location.replace("http://127.0.0.1:8000/checkout/orderplaced")
+                }
+            }
+        });
+        },
+     });
 });

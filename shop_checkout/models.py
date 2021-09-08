@@ -17,8 +17,8 @@ TITLE_CHOICES = (
 
 class OrderDetails(models.Model):
     order_number = models.CharField(max_length=15, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='order')
+    # user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+     #                                null=True, blank=True, related_name='order')
     title = models.CharField(max_length=3, choices=TITLE_CHOICES)
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
@@ -28,36 +28,24 @@ class OrderDetails(models.Model):
     town_or_city = models.CharField(max_length=50, null=False, blank=False)
     country = CountryField(default='Select Country')
     postcode = models.CharField(max_length=10, null=False, blank=False)
-    date = models.DateTimeField(auto_now_add=True)
+    date_created = models.DateTimeField(auto_now_add=True)
     unit_total = models.DecimalField(max_digits=6, decimal_places=2,
                                      null=False, default=0)
+    billing_status = models.BooleanField(default=False)
 
-    def _generate_order_number(self):
-        """
-        geterate order number
-        """
-        return uuid.uuid4().hex.upper()
-
-    def save(self, *args, **kwargs):
-        """
-        Override the original save method to set the order number
-        if it hasn't been set already.
-        """
-        if not self.order_number:
-            self.order_number = self._generate_order_number()
-        super().save(*args, **kwargs)
-
+    class Meta:
+        ordering = ('-date_created',)
+    
     def __str__(self):
-        return self.order_number
+        return str(self.date_created)
 
 
 class UnitOrder(models.Model):
     order = models.ForeignKey(OrderDetails, null=False, blank=False,
                               on_delete=models.CASCADE,
                               related_name='units')
-    item = models.ForeignKey(Item, null=False, blank=False,
-                             related_name='order_units',
-                             on_delete=models.CASCADE)
+    item = models.ForeignKey(Item, related_name='order_units',
+                             on_delete=models.CASCADE, default=1)
     unit_size = models.CharField(max_length=20, null=False, blank=False)
     quantity = models.IntegerField(null=False, blank=False, default=1)
     unit_total = models.DecimalField(max_digits=6, decimal_places=2,
