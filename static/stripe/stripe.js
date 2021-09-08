@@ -46,21 +46,31 @@ form.addEventListener('submit', function(ev) {
     console.log(postCode)
 
 
+$.ajax({
+    type: "POST",
+    url: 'http://127.0.0.1:8000/checkout/ordered',
+    data: {
+        order_number: clientsecret,
+        csrfmiddlewaretoken: CSRF_TOKEN,
+        action: 'ordered',
+        },
+    success: function (json) {
+        console.log(json.success)
 
     stripe.confirmCardPayment(clientsecret, {
         payment_method: {
             card: card,
             billing_details: {
-                address:{
+                address: {
                     line1: addressLine,
                     line2: addressLine2,
                     postal_code: postCode
                 },
-                name: firstName+ " " +lastName
-                
+                name: firstName + " " + lastName
+
             },
         }
-    }).then(function(result) {
+    }).then(function (result) {
         if (result.error) {
             console.log('patment error')
             console.log(result.error.message);
@@ -70,6 +80,7 @@ form.addEventListener('submit', function(ev) {
                 window.location.replace("http://127.0.0.1:8000/checkout/orderplaced")
             }
         }
-    })
-
-})
+    });
+    },
+    });
+});

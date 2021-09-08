@@ -3,7 +3,7 @@ import uuid
 from shop.models import Item
 # from profiles.models import UserProfile
 from django_countries.fields import CountryField
-from django.conf import settings
+
 
 # Create your models here.
 # Followed the Code Institute Tutorial
@@ -17,8 +17,8 @@ TITLE_CHOICES = (
 
 class OrderDetails(models.Model):
     order_number = models.CharField(max_length=15, null=False, editable=False)
-    """user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='order')"""
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True, related_name='order')
     title = models.CharField(max_length=3, choices=TITLE_CHOICES)
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
@@ -54,13 +54,14 @@ class OrderDetails(models.Model):
 class UnitOrder(models.Model):
     order = models.ForeignKey(OrderDetails, null=False, blank=False,
                               on_delete=models.CASCADE,
-                              related_name='unit')
-    unit = models.ForeignKey(Item, null=False, blank=False,
+                              related_name='units')
+    item = models.ForeignKey(Item, null=False, blank=False,
+                             related_name='order_units',
                              on_delete=models.CASCADE)
     unit_size = models.CharField(max_length=20, null=False, blank=False)
-    quantity = models.IntegerField(null=False, blank=False, default=0)
+    quantity = models.IntegerField(null=False, blank=False, default=1)
     unit_total = models.DecimalField(max_digits=6, decimal_places=2,
                                      null=False, blank=False, editable=False)
 
     def __str__(self):
-        return f'sku {self.unit.sku} on order {self.order.order_number}'
+        return str(self.id)
