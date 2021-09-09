@@ -8,7 +8,7 @@ def Ordered(request):
     cart = Cart(request)
     if request.POST.get('action') == 'post':
 
-        user_id = request.user.id
+        # userid = request.user.id
         order_key = request.POST.get('order_key')
         carttotal = cart.unit_total()
 
@@ -17,15 +17,14 @@ def Ordered(request):
             pass
         else:
             order = OrderDetails.objects.create(
-                user_id=user_id,
                 title='title',
-                first_name='firstname',
-                last_name='lastname',
+                first_name='firstName',
+                last_name='lastName',
                 address_line1='line1',
                 address_line2='line2',
                 town_or_city='town',
                 country='country',
-                unite_total=carttotal,
+                unit_total=carttotal,
                 order_key=order_key
              )
             order_id = order.pk
@@ -34,9 +33,9 @@ def Ordered(request):
                 UnitOrder.objects.create(
                     order_id=order_id,
                     item=unit['item'],
-                    price=unit['price'],
-                    quanity=unit['quantity'],
-                    size=unit['size']
+                    unit_total=unit['price'],
+                    quantity=unit['quantity'],
+                    unit_size=unit['size']
                  )
             response = JsonResponse({'success': 'Order Created'})
             return response

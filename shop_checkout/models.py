@@ -1,5 +1,4 @@
 from django.db import models
-import uuid
 from shop.models import Item
 # from profiles.models import UserProfile
 from django_countries.fields import CountryField
@@ -16,6 +15,7 @@ TITLE_CHOICES = (
 
 
 class OrderDetails(models.Model):
+
     order_key = models.CharField(max_length=200, null=False, editable=False, default=1)
     # user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
      #                                null=True, blank=True, related_name='order')
@@ -23,8 +23,8 @@ class OrderDetails(models.Model):
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     email_address = models.EmailField(default='email address')
-    adress_line1 = models.CharField(max_length=70, blank=False)
-    adress_line2 = models.CharField(max_length=70, blank=True)
+    address_line1 = models.CharField(max_length=70, blank=False)
+    address_line2 = models.CharField(max_length=70, blank=True)
     town_or_city = models.CharField(max_length=50, null=False, blank=False)
     country = CountryField(default='Select Country')
     postcode = models.CharField(max_length=10, null=False, blank=False)

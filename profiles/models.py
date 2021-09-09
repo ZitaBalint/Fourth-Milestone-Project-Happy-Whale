@@ -5,7 +5,7 @@ from django.dispatch import receiver
 
 from django_countries.fields import CountryField
 
-"""TITLE_CHOICES = (
+TITLE_CHOICES = (
     ('MR', 'Mr.'),
     ('MRS', 'Mrs.'),
     ('MS', 'Ms.'),
@@ -37,4 +37,4 @@ class UserProfile(models.Model):
     def create_or_update_user_profile(self, sender, instance, created, **kwargs):   
         if created:
             UserProfile.objects.create(user=instance)
-        isinstance.userprofile.save()"""
+        isinstance.userprofile.save()

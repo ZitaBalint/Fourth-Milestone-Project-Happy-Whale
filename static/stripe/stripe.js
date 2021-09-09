@@ -41,7 +41,7 @@ var postCode = document.getElementById("postCode").value;
 
 $.ajax({
     type: "POST",
-    url: '',
+    url: 'ordered/',
     data: {
       order_key: clientsecret,
       csrfmiddlewaretoken: CSRF_TOKEN,
@@ -70,7 +70,7 @@ $.ajax({
                 } else {
                     if (result.paymentIntent.status === 'succeeded') {
                         console.log('payment proccessed')
-                        window.location.replace()
+                        window.location.replace('ordersent/ordersent.html')
                     }
                 }
               });
