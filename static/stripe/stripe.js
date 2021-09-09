@@ -39,6 +39,16 @@ var addressLine = document.getElementById("addressLine").value;
 var addressLine2 = document.getElementById("addressLine2").value;
 var postCode = document.getElementById("postCode").value;
 
+$.ajax({
+    type: "POST",
+    url: '',
+    data: {
+      order_key: clientsecret,
+      csrfmiddlewaretoken: CSRF_TOKEN,
+      action: "post",
+    },
+    success: function (json) {
+        console.log(json.success)
 
             stripe.confirmCardPayment(clientsecret, {
                 payment_method: {
@@ -60,8 +70,16 @@ var postCode = document.getElementById("postCode").value;
                 } else {
                     if (result.paymentIntent.status === 'succeeded') {
                         console.log('payment proccessed')
-                        window.location.replace("{% url 'checkout:ordersent' %}")
+                        window.location.replace()
+                    }
                 }
-            }
-            })
+              });
+        
+            },
+            error: function (xhr, errmsg, err) {},
+          });
+        
+        
+        
         });
+        

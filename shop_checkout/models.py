@@ -16,7 +16,7 @@ TITLE_CHOICES = (
 
 
 class OrderDetails(models.Model):
-    order_key = models.CharField(max_length=200)
+    order_key = models.CharField(max_length=200, null=False, editable=False, default=1)
     # user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
      #                                null=True, blank=True, related_name='order')
     title = models.CharField(max_length=3, choices=TITLE_CHOICES)

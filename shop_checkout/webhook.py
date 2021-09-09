@@ -9,10 +9,12 @@ from django.views.generic.base import TemplateView
 from django.views.decorators.csrf import csrf_exempt
 from shop_checkout.views import payment_confirmation
 from django.shortcuts import render
-
+from django.conf import settings
+from django.views.decorators.http import require_POST
 
 # Create your views here.
 
+endpoint_secret = "whsec_HIVZxpodn3Otkh4hXTpE7jNLSvqucC90"
 
 @login_required
 def CheckoutView(request):
@@ -33,14 +35,18 @@ def CheckoutView(request):
     return render(request, 'checkout/checkout.html', {'clinet_secret': intent.client_secret})
 
 
+@require_POST
 @csrf_exempt
 def stripe_webhook(request):
     payload = request.body
+    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
+    endpoint_secret = settings.STRIPE_WH_SECRET
 
     try:
         event = stripe.Event.construct_from(
-            json.loads(payload), stripe.api_key
+            json.loads(payload), stripe.api_key, sig_header,
+            endpoint_secret
         )
     except ValueError as e:
         # Invalid payload
