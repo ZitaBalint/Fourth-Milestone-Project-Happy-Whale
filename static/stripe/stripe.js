@@ -33,48 +33,35 @@ var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
 
-    var firstName = document.getElementById("firstName").value;
-    var lastName = document.getElementById("lastName").value;
-    var addressLine = document.getElementById("addressLine").value; 
-    var addressLine2 = document.getElementById("addressLine2").value;
-    var postCode = document.getElementById("postCode").value;
+var firstName = document.getElementById("firstName").value;
+var lastName = document.getElementById("lastName").value;
+var addressLine = document.getElementById("addressLine").value; 
+var addressLine2 = document.getElementById("addressLine2").value;
+var postCode = document.getElementById("postCode").value;
 
 
-    $.ajax({
-        type: "POST",
-        url: 'http://127.0.0.1:8000/checkout/ordered/ordered/',
-        data: {
-            order_number: clientsecret,
-            csrfmiddlewaretoken: CSRF_TOKEN,
-            action: 'post',
-            },
-        success: function (json) {
-            console.log(json.success)
+            stripe.confirmCardPayment(clientsecret, {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        address: {
+                            line1: addressLine,
+                            line2: addressLine2,
+                            postal_code: postCode
+                        },
+                        name: firstName + " " + lastName
 
-        stripe.confirmCardPayment(clientsecret, {
-            payment_method: {
-                card: card,
-                billing_details: {
-                    address: {
-                        line1: addressLine,
-                        line2: addressLine2,
-                        postal_code: postCode
                     },
-                    name: firstName + " " + lastName
-
-                },
             }
-        }).then(function (result) {
-            if (result.error) {
-                console.log('patment error')
-                console.log(result.error.message);
-            } else {
-                if (result.paymentIntent.status === 'succeeded') {
-                    console.log('payment proccessed')
-                    window.location.replace("http://127.0.0.1:8000/checkout/orderplaced")
+            }).then(function (result) {
+                if (result.error) {
+                    console.log('patment error')
+                    console.log(result.error.message);
+                } else {
+                    if (result.paymentIntent.status === 'succeeded') {
+                        console.log('payment proccessed')
+                        window.location.replace("{% url 'checkout:ordersent' %}")
                 }
             }
+            })
         });
-        },
-     });
-});

@@ -3,8 +3,11 @@ from .models import OrderDetails, UnitOrder
 
 # Register your models here.
 
+admin.site.register(OrderDetails)
+admin.site.register(UnitOrder)
 
-class UnitOrderAdminInline(admin.TabularInline):
+
+"""class UnitOrderAdminInline(admin.TabularInline):
     model = UnitOrder
     readonly_fields = ('unit_total',)
 
@@ -27,4 +30,4 @@ class OrderAdmin(admin.ModelAdmin):
     ordering = ('-date_created',)
 
 
-admin.site.register(OrderDetails, OrderAdmin)
+admin.site.register(OrderDetails, OrderAdmin)"""

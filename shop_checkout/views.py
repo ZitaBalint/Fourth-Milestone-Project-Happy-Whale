@@ -1,58 +1,49 @@
-from django.contrib.auth.decorators import login_required
-import stripe
-import json
-from django.http import HttpResponse
-from shopping_cart.cart import Cart
-from django.views.generic.base import TemplateView
-from django.views.decorators.csrf import csrf_exempt
-from profiles.views import payment_confirmation
 from django.shortcuts import render
+from django.http.response import JsonResponse
+from shopping_cart.cart import Cart
+from . models import OrderDetails, UnitOrder
 
 
-# Create your views here.
-
-
-@login_required
-def CheckoutView(request):
+def Ordered(request):
     cart = Cart(request)
-    total = str(cart.unit_total())
-    total = total.replace('.', '')
-    total = int(total)
+    if request.POST.get('action') == 'post':
 
-    # API key from Stripe site
+        user_id = request.user.id
+        order_key = request.POST.get('order_key')
+        carttotal = cart.unit_total()
 
-    stripe.api_key = 'sk_test_51JUDztBeU0R6ZOy2lywo6nuzKM9pPckoc3UjIhGdx4Shh0BwifLesRSy6dj3MQbMRryKPshBpeQUZO3WMzO0q0Ka00FmM7m3BQ'
-    intent = stripe.PaymentIntent.create(
-        amount=total,
-        currency='gbp',
-        metadata={'userid': request.user.id}
-    )
+        # check if the order is exists
+        if OrderDetails.objects.filter(order_key=order_key).exists():
+            pass
+        else:
+            order = OrderDetails.objects.create(
+                user_id=user_id,
+                title='title',
+                first_name='firstname',
+                last_name='lastname',
+                address_line1='line1',
+                address_line2='line2',
+                town_or_city='town',
+                country='country',
+                unite_total=carttotal,
+                order_key=order_key
+             )
+            order_id = order.pk
 
-    return render(request, 'checkout/checkout.html', {'clinet_secret': intent.client_secret})
+            for unit in cart:
+                UnitOrder.objects.create(
+                    order_id=order_id,
+                    item=unit['item'],
+                    price=unit['price'],
+                    quanity=unit['quantity'],
+                    size=unit['size']
+                 )
+            response = JsonResponse({'success': 'Order Created'})
+            return response
 
 
-@csrf_exempt
-def stripe_webhook(request):
-    payload = request.body
-    event = None
-
-    try:
-        event = stripe.Event.construct_from(
-            json.loads(payload), stripe.api_key
-        )
-    except ValueError as e:
-        # Invalid payload
-        print(e)
-        return HttpResponse(status=400)
-
-        # Handle the event
-    if event.type == 'payment_intent.succeeded':
-        payment_confirmation(event.data.objects.client_secret)
-    
-    else:
-        print('Unhandled event type {}'.format(event.type))
-
-    return HttpResponse(status=200)
+def payment_confirmation(data):
+    OrderDetails.objects.filer(order_key=data).update(billing_status=True)
 
 
 def order_sent(request):

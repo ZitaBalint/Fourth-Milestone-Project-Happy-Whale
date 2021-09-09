@@ -16,7 +16,7 @@ TITLE_CHOICES = (
 
 
 class OrderDetails(models.Model):
-    order_number = models.CharField(max_length=15, null=False, editable=False)
+    order_key = models.CharField(max_length=200)
     # user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
      #                                null=True, blank=True, related_name='order')
     title = models.CharField(max_length=3, choices=TITLE_CHOICES)
@@ -32,6 +32,7 @@ class OrderDetails(models.Model):
     unit_total = models.DecimalField(max_digits=6, decimal_places=2,
                                      null=False, default=0)
     billing_status = models.BooleanField(default=False)
+    objects = models.Manager()
 
     class Meta:
         ordering = ('-date_created',)
@@ -50,6 +51,7 @@ class UnitOrder(models.Model):
     quantity = models.IntegerField(null=False, blank=False, default=1)
     unit_total = models.DecimalField(max_digits=6, decimal_places=2,
                                      null=False, blank=False, editable=False)
+    objects = models.Manager()
 
     def __str__(self):
         return str(self.id)
