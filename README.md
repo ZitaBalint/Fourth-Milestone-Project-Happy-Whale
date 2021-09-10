@@ -1,5 +1,8 @@
 # Happy Whale Clothing 
 
+## Deployes project: https://happy-whale-milestone-project.herokuapp.com/
+
+## Meet the business
 Happy Whale Clothing is a Bristol based small, independent business set up by Emily and Victoria, twin nannies. They are my very close friends and I know how much they were talking about getting a website for their little business, but they never got around to look into it. If I can make my first milestone project out of their pictures and build a website for them, then it will go live as soon as I learn more. So it was a deal!
 Their only asking was to build something simple and clear, but still represents Happy Whale and its vibrant happy colour scheme. It needed to be simple as it’s a baby clothing website so most of the time tired parents are looking for something cute for their little ones, or might even during or in between nursing. Or perhaps someone is looking for a cute thing for their friend’s newborn, but never in their life they bought a baby clothing item, so they need that extra help. So it needed to be something easy to navigate.
 
@@ -142,24 +145,21 @@ The website was tested all the way through, using Chrome dev tools, and made sur
 - Json
 - JavaScript
 - Python
-- Django
-- 
-- jQuery - used for Fancybox, display images in a slideshow, dropdown menu in info page, accordion on info page and footer 
-- Bootstrap - used adding responsiveness and also used for some of the layouts Card elements, Form sections, Carousel, Toggle navbar, Drop down menu and Accordion 
+- Django 
+- Stripe - for payment
+- Bootstrap5 - used adding responsiveness and also used for some of the layouts Card elements, Form sections, Carousel, Toggle navbar, Drop down menu and Accordion 
 - Font Awesome - Through the pages used font awesome icons for social media icons in footer and icons for info page top container 
 - Google Fonts - Used Google Fonts; Open Sans and Amatic SC
-- Google Maps - embedded google map to Info Page 
-- Termly.io: copied one of the free terms and conditions templates 
-- Termsfeed.com: Copied a part of one of the free download privacy policy templates  
-- Code institute tutorial: Navalert bar on home page 
+- Code institute tutorial: Boutiq_Ado Profile
 
 ## Outsourced Media 
 - Cloudinary - used to style images, all images are stored and deployed from the caching server
-- Fancybox - used to able to make gallery page image section 
 - Unsplash - background images were downloaded from Unsplash website 
 
 
 ## Deployments 
+
+- The project was deployed in Heroku https://happy-whale-milestone-project.herokuapp.com/ and the static files are stored in Amazon.AWS. 
 
 - My project was built and it is stored on Github 
 I created a master branch for the project in the following way:
@@ -174,7 +174,7 @@ Click clone or download green button
 Click on the copy icon at the end of the https:// link
 Open the terminal
 Navigate to the location where the repository is going to be stored 
-With the repository URL enter the following $ git clone https://zitabalint.github.io/My-First-Milestone-Project-Happy-Whale/
+With the repository URL enter the following $ git clone https://zitabalint.github.io/Fourth-Milestone-Project-Happy-Whale/
 Press enter and the local repository was created  
 
 ## Credits
@@ -189,6 +189,6 @@ All the images displayed from Happy Whale Clothing were given the right to use i
 - Home page whale background image was not copied but helped to styled by the following video [Kevin Powell: Background images](https://www.youtube.com/watch?v=33IinMVJf-M)
 - Bottom of the home page Our Service cards were taken from [Bootstrap](https://getbootstrap.com/docs/4.0/components/card/) and styled and altered for the page’s needs. 
 - Message us for was originated from bootstrap but was put together from 2 different code form [Form from Bootstrap](https://getbootstrap.com/docs/4.0/components/forms/) and was change several times and styled for the page’s needs 
-- -Review card section was originally from [Bootstarp](https://getbootstrap.com/docs/4.0/components/card/) but was adjusted and it was added a grid system to it which also took the original purpose of that specific deck-card code. 
 - Visual inspiration of the website was influenced by https://www.joules.com/ 
-
+- Also folowed the Code Institute tutorial and marked those sections where i closly followed the tutorial
+- The core of the project was created on the base of my First Milestone Project Happy Whale and kept CSS and some of the base HTML  and elements of the site and project
