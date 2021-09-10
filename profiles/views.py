@@ -3,6 +3,7 @@ from . models import UserProfile
 from . forms import UserProfileForm
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
+from shop_checkout.models import OrderDetails
 # Create your views here.
 # Followed Code institute tutorial
 
@@ -27,3 +28,10 @@ def Profile(request):
     }
 
     return render(request, template, context)
+
+
+def order_history(request, order_key):
+    user_id = request.user.username
+    orders = OrderDetails.objects.filter(user_id=user_id).filter(billing_status=True)
+    return orders
+    
