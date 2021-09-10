@@ -97,15 +97,10 @@ Footer page is non responsive as the other part of the website. Social media ico
 - Accordion: allow to toggle content and display the text in a more discrete way, although when clicked text is displayed in a full context. Accordion was used in footer and in terms and conditions sections. 
 - Social media icons: they are linked directly to the existing websites. They are located in the footer and info page. They are target=”_blanks so it takes the user to a separate page. 
 
-## Upcoming features
-
-Add JavaScript functions to a better user experience 
-Create a shopping cart and link check out paying methods to the page
-Add more complex shopping page where users can add several item at once to the cart from the same items 
-Link real time time reviews and images from social media to the page
 
 ## Testing
 To validate my code I used W3C for CSS and jsonformatter validator for HTML. 
+There were user testing through the process but unfortunetly i couldn't run many testing due the time scale
 
 ### Client stories:
 
