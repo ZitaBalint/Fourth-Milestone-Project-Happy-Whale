@@ -67,6 +67,7 @@ A picture montage and a soft fabric section, that explains the sustainably sourc
 This section Shop all: displayes all products that are avilable from the webiste. 
 
 The shop item by category is actually takes the user to the specific items, which are also linked to the 'shop" page url but in the url also displayes the category name. 
+Customer can add items to the cart , with selected sizes and quantities
 
 #### Gallery Page
 
@@ -92,7 +93,6 @@ Footer page is non responsive as the other part of the website. Social media ico
 - CTC text: allow users to navigate different pages of the site, they are located in the home page nav bar, drop down and shop by category and also in the footer sections. 
 - Accordion: allow to toggle content and display the text in a more discrete way, although when clicked text is displayed in a full context. Accordion was used in footer and in terms and conditions sections. 
 - Social media icons: they are linked directly to the existing websites. They are located in the footer and info page. They are target=”_blanks so it takes the user to a separate page. 
-- Fancybox: allow the user to display gallery images in a larger form and read the caption for the picture. Fancybox was used at the Gallery page gallery section. 
 
 ## Upcoming features
 
