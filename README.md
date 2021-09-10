@@ -106,7 +106,7 @@ To validate my code I used W3C for CSS and jsonformatter validator for HTML.
 
 ### Client stories:
 
-1. As a person who is just browsing through different website i want something eye        catching, something stands out from the crowd
+1. As a person who is just browsing through different website i want something eye catching, something stands out from the crowd
 Easy to navigate, pictures are eye catching and get me attention 
 2. As a person who is new to the site I would like to see images of the product not just on display but on real people as well for better visualization  such as a gallery page 
 -There are images where I can see the fit of the different items 
@@ -132,27 +132,18 @@ The website was tested all the way through, using Chrome dev tools, and made sur
 - Our service section : was tested several times and has been changed and resized.
 - Shop page both image and background image was changed several times and was resized to be able to find the perfect background which also fits into the color scheme.
 - Gift Card section: several different background colours and sizes were tested.
-- Shop items images and row items: font size was tested several times and fake pricing was added to the items. 
-- Christmas banner: background image was tested and in the end included in media with a cropped version as there was no other way to display it in a usable and estetic way. 
-- Fancybox : it was removed and added again to the page as for the first time there was an undiscovered bug which didn’t let the images display in a way of scrolling. After several hours trying to debug the code, I have decided to delete the all codes from HTML and CSS and try to reimplement from the beginning, which worked immediately.
-- Gallery page reviews: even when adjusted size of the cards, they were not displaying in a nice user friendly way. They were too thin before they expanded for a smaller screen size. I added grid sections, lg, sm and xm to the card div but then they were not collapsing to two different sections, but they overflow to the outside of the page. I tried to wrap them into a new div individually, adding the lg sm and xm sizing to the new div. This had broken the code of card-deck and they were not displaying in the same length. In the end I decided to set their height to 100% which solves the problem of the grid and also the height of the images. 
-- Footer: The original footer did not include the accordion, but then it wasn’t displayed nice on smaller devices and it was unreadable. I found accordion on Bootstrap, but it needs JavaScript for full functioning. In the end I decided as I haven't learned JavaScript yet I will make it work with the grid section, so I generated two different footers and applied a d-none to each of them to display on the right device size. 
-
-#### Image testing screenshots 
-
-![Get in Touch background testing](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605864270/Rest%20of%20the%20site/Screenshot_2020-11-19_at_23.23.23_fkox4n.png)
-
-![Get in Touch background image testing 2](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605864320/Rest%20of%20the%20site/Screenshot_2020-11-19_at_23.24.28_tk0zaq.png)
-
-![Christmas banner background image testing](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605864327/Rest%20of%20the%20site/Screenshot_2020-11-19_at_23.25.40_faupv3.png)
-
-![Small screen Christmas banner background image testing]-(https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605864335/Rest%20of%20the%20site/Screenshot_2020-11-19_at_23.26.19_yi1tx3.png)
+- Shop items images and row items: font size was tested several times and pricing and reviews were added to the card
 
 ## Assets
 
 - GitHub - used GitPod as an editor 
 - HTML
 - CSS
+- Json
+- JavaScript
+- Python
+- Django
+- 
 - jQuery - used for Fancybox, display images in a slideshow, dropdown menu in info page, accordion on info page and footer 
 - Bootstrap - used adding responsiveness and also used for some of the layouts Card elements, Form sections, Carousel, Toggle navbar, Drop down menu and Accordion 
 - Font Awesome - Through the pages used font awesome icons for social media icons in footer and icons for info page top container 
