@@ -48,4 +48,4 @@ def payment_confirmation(data):
 def order_sent(request):
     cart = Cart(request)
     cart.clear()
-    return render(request, 'shop_checkout/ordersent.html')
+    return render(request, 'checkout/ordersent.html')

@@ -11,12 +11,12 @@ class UserProfileForm(forms.ModelForm):
         exclude = ('user',)
 
     def __init__(self, *args, **kwargs):
-        super().__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
         placeholders = {
             'default_postcode': 'Post Code',
             'default_town_or_city': 'Town or City',
-            'default_street_adress1': 'Address Line 1',
-            'default_street_adress2': 'Address Line 2',
+            'default_address_line1': 'Address Line 1',
+            'default_address_line2': 'Address Line 2',
             'default_country': 'Country',
         }
 
@@ -24,10 +24,9 @@ class UserProfileForm(forms.ModelForm):
             if field != 'default_country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
-                else:
-                    placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
+            placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = ('border-black '
                                                         'rounded-0 '
                                                         'profile-form-input')
-            self.fields[field].label = False 
+            self.fields[field].label = False

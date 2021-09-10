@@ -1,6 +1,6 @@
 from django.db import models
 from shop.models import Item
-# from profiles.models import UserProfile
+from profiles.models import UserProfile
 from django_countries.fields import CountryField
 
 
@@ -17,8 +17,8 @@ TITLE_CHOICES = (
 class OrderDetails(models.Model):
 
     order_key = models.CharField(max_length=200, null=False, editable=False, default=1)
-    # user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-     #                                null=True, blank=True, related_name='order')
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True, related_name='orders')
     title = models.CharField(max_length=3, choices=TITLE_CHOICES)
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)

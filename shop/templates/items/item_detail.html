@@ -13,10 +13,10 @@
 {% block content %}
 <div class="cointer container-fluid">
   <div class="row">
-    <div class="col-md-7 col-12">
+    <div class="col-md-6 col-12">
       <img class="img-fluid mx-auto d-block" max-width="400px" alt="Responsive image" src="{{ item.image_url }}">
     </div>
-    <div class="col-md-5 col-12">
+    <div class="px-3 col-md-6 col-12">
       <h2 class="mb-o h-4">{{ item.name }}</h2>
       <p>£ {{ item.price }}</p>
       <p>{{ item.review_rating }} /5</p>
@@ -49,52 +49,137 @@
           <option value="5">5</option>
         </select>
 
-        <button type="submit" id="add-button" value="{{item.id}}" class="btn btn-secondary btn-sm">Add to
+        <button type="submit" id="add-button" value="{{item.id}}" class="m-3 btn btn-secondary">Add to
           basket</button>
-        <button type="submit" class="btn btn-secondary btn-sm" onClick="javascript:history.go(-1);">Keep
+        <button type="submit" class="m-3 btn btn-secondary" onClick="javascript:history.go(-1);">Keep
           Shopping</button>
       </div>
-      <div>
-            <div class="accordion" id="accordionPanelsStayOpenExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                      Accordion Item #1
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
-                      <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                      Accordion Item #2
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                    <div class="accordion-body">
-                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                      Accordion Item #3
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                    <div class="accordion-body">
-                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
+     
     </div>
+    <div>
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header card-header" id="panelsStayOpen-headingOne">
+            <button class="btn btn-link open "  type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+              aria-controls="panelsStayOpen-collapseOne">
+              <strong><h3>Description</h3></strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+            aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+              <ul>
+                <li><P>MONEY FROM EVERY SALE GOES TO THE MARINE CONSERVATION SOCIETY - HELPING TO KEEP OUR OCEANS CLEAN AND OUR WHALES HAPPY!</P></li>
+                <li><P>Our free as a bird print is made in the UK from 95% Cotton 5 % Elastane Jersey </P></li>
+                <li><P>We carefully select our fabrics to ensure they are kind to babies skin and gorgeously soft and comfortable for little legs. All of our fabrics are Öko-Tex Standard 100 certified ensuring they are chemically safe for the whole family. All seams are overlocked inside for a quality finish </P></li>
+                <li><P>Happy Whale leggings feature an enclosed non roll elasticated waist and are available in sizes 0-6. The leggings also feature a reversible ankle cuff which is designed to be folded up or down as your child grows. All of our styles are cut for both disposable and cloth nappies</P></li>
+                <li><P>Every order is carefully wrapped in delicate recycled tissue paper</P></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header card-header" id="panelsStayOpen-headingTwo">
+            <button class="btn btn-link collapsed"  type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseTwo">
+              <strong><h3>Care Instructions:</h3></strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+              <ul>
+              <li><P>- Bright colours may fade so wash inside out at 30° with similar colours</P></li>
+              <li><P>- Line dry </P></li>
+              <li><P>- Iron on cool</P></li>
+              <li><P>- Do not tumble dry</P></li>
+              <li><P>Pattern placement may vary to pictured item</P></li>
+            </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header card-header" id="panelsStayOpen-headingThree">
+            <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree">
+              <strong><h3>Size Guid</h3></strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+              <table class="container size-guid">
+                <tr class="guid-head">
+                    <th>
+                        <h4>Age</h4>
+                    </th>
+                    <th>
+                        <h4>Height</h4>
+                    </th>
+                    <th>
+                        <h4>Chest</h4>
+                    </th>
+                </tr>
+                <tr>
+                    <th>0-3 Months</th>
+                    <td>56 cm</td>
+                    <td>38.5 cm</td>
+                </tr>
+                <tr>
+                    <th>3-6 Months</th>
+                    <td>68 cm</td>
+                    <td>45.5 cm</td>
+                </tr>
+                <tr>
+                    <th>6-9 Months</th>
+                    <td>74 cm</td>
+                    <td>47 cm</td>
+                </tr>
+                <tr>
+                    <th>9-12 Months</th>
+                    <td>80 cm</td>
+                    <td>49.5 cm</td>
+                </tr>
+                <tr>
+                    <th>12-18 Months</th>
+                    <td>86 cm</td>
+                    <td>50.5 cm</td>
+                </tr>
+                <tr>
+                    <th>18-24 Months</th>
+                    <td>92 cm</td>
+                    <td>52.5 cm</td>
+                </tr>
+                <tr>
+                    <th>2-3 Years</th>
+                    <td>98 cm</td>
+                    <td>54.5 cm</td>
+                </tr>
+                <tr>
+                    <th>3-4 Years</th>
+                    <td>104 cm</td>
+                    <td>56 cm</td>
+                </tr>
+                <tr>
+                    <th>4-5 Years</th>
+                    <td>110 cm</td>
+                    <td>58</td>
+                </tr>
+                <tr>
+                    <th>5-6 Years</th>
+                    <td>116 cm</td>
+                    <td>60.5 cm</td>
+                </tr>
+            </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>

@@ -70,7 +70,7 @@ $.ajax({
                 } else {
                     if (result.paymentIntent.status === 'succeeded') {
                         console.log('payment proccessed')
-                        window.location.replace('ordersent/ordersent.html')
+                        window.location.replace('ordersent/')
                     }
                 }
               });
