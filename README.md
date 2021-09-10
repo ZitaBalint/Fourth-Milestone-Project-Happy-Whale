@@ -1,102 +1,203 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Happy Whale Clothing 
 
-Welcome ZitaBalint,
+Happy Whale Clothing is a Bristol based small, independent business set up by Emily and Victoria, twin nannies. They are my very close friends and I know how much they were talking about getting a website for their little business, but they never got around to look into it. If I can make my first milestone project out of their pictures and build a website for them, then it will go live as soon as I learn more. So it was a deal!
+Their only asking was to build something simple and clear, but still represents Happy Whale and its vibrant happy colour scheme. It needed to be simple as it’s a baby clothing website so most of the time tired parents are looking for something cute for their little ones, or might even during or in between nursing. Or perhaps someone is looking for a cute thing for their friend’s newborn, but never in their life they bought a baby clothing item, so they need that extra help. So it needed to be something easy to navigate.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+## Who is it for?
 
-## Gitpod Reminders
+### My website is for busy parents:
+- Able to navigate easily, find categories of clothing, sizes and prints as quick as possible
+- Eye catching images, which grab their attention and standing out from the already large market
+- An Our Mission section when the shopper can bond with the seller and can feel their passion about ethical clothing plastic pollution
+- Large images, easy to press buttons to add to baskets or select different prints or sizes for quicker checkout
+- Easy to approach communications, where the seller not just giving the opportunity to people to directly message them, but also encourages users to upload their pictures of their babies and take pride in the already large and existing social media platforms
+- A clear and accurate size guide when parents can take measurements but also giving the chance to send their own size requests
+- Log ina and log out from their account
+- Add to baske, update and remove, following CRUD and creat a profile for the users where they access their previouse orders as well
+- Secure check out via Stripe
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+### The website is also for people who would shop baby clothes as a present:
+Gift Card option offering and displayed on home page
+This features are largely displayed through the website, without overloading the users with massive amounts of information, or large amounts of clickable buttons. 
+Environment just as comfort of the clothes are very important for the seller and made sure it is displayed in several sections through the website
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Wireframes: 
+![Colour Scheme](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605863809/Rest%20of%20the%20site/My_Post_hdrhxc.png)
+![Home page - first wireframe](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605834658/Rest%20of%20the%20site/IMG_8462_loh3ew.jpg) 
+![Shop page - first wireframe](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605834658/Rest%20of%20the%20site/IMG_8463_pxdgif.jpg)
+![Contact us page - first wireframe](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605834658/Rest%20of%20the%20site/IMG_8464_ct2cbo.jpg)
+![Our mission page - first wireframe](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605834658/Rest%20of%20the%20site/IMG_8465_eiwwmz.jpg)
+![Mobile view- first wireframe](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605834659/Rest%20of%20the%20site/IMG_8466_z56nhj.jpg)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Header
 
-To log into the Heroku toolbelt CLI:
+#### Navbar:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Sticked to the top of the page includes four links to the rest of the website with the logo. Also there is a basket which displays the number of items in the cart. Next to it there is a user icon where the vistor of the site can Register, Sign IN, Or if they are sign in can view their Account or Log Out. Also there is a surch bar where the customer can search for items by entering keywords, which are return with either of the ites's name or the keyword in the discription of the item. 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+### Home page
+#### Carousel Slide:
 
-## Release History
+This feature is to grab people attention and to display the latest prints and specials on the website. This is the first thing that the user sees, it is important to be eye catching. The max-width of the carousel is 1300px and the height is auto, otherwise with the full width the images would be too high to fit a full screen comfortably. 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+#### Shop by category
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+This is a quick access to the shop category page, when the customer didn’t use the navbar, or scrolled through the home page first. Images are responsive and displayed full width of the site either in a row of 6, 3 or 2. Hover scales images by 1.05. 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+#### Our story
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+This section introduces the owner of the business and talks about the connection with children's clothes. The second part of the section talks about their mission and passion about plastic pollution and about the charity donation after each sale.  
+The whale background image is the connection with the brand and mission, that is overlaid with a dark opacity for better readability. 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Shop page
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+#### Side wide alert
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+A picture montage and a soft fabric section, that explains the sustainably sourced, eco friendly, soft material. This sits on the top of the page, with an image on the left and a responsive background image on the right 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Shopping Items
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+This section Shop all: displayes all products that are avilable from the webiste. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The shop item by category is actually takes the user to the specific items, which are also linked to the 'shop" page url but in the url also displayes the category name. 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+#### Gallery Page
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+Unfortunetly non display
 
-------
+##### Info page 
 
-## FAQ about the uptime script
+Unfortunetly non display
+### Footer
 
-**Why have you added this script?**
+This section is displayed in two different ways, using accordion to collapse after the medium size screen is reached or below.  
+About Us, Customer info collapses into accordion, Follow us and Sign Up for Our Newsletter are displayed in both views. 
+Each item hovers over to a different colour and with an exception of the newsletter section they all scale up by 1.05. 
+Footer page is non responsive as the other part of the website. Social media icons are taking to the right social media site the user. 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## Features
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- Navbar and burger button: easily navigate navbar and all linked to the correct page. It allows to display header contents in a much nicer and clearer way.
+- Caresoule : located on the home page just under navbar and displays new arrivals
+- CTA buttons: allow user to navigate between page., Located on home page our service category, shop page shop items, gift card section and info page terms and conditions section.
+- CTC text: allow users to navigate different pages of the site, they are located in the home page nav bar, drop down and shop by category and also in the footer sections. 
+- Accordion: allow to toggle content and display the text in a more discrete way, although when clicked text is displayed in a full context. Accordion was used in footer and in terms and conditions sections. 
+- Social media icons: they are linked directly to the existing websites. They are located in the footer and info page. They are target=”_blanks so it takes the user to a separate page. 
+- Fancybox: allow the user to display gallery images in a larger form and read the caption for the picture. Fancybox was used at the Gallery page gallery section. 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Upcoming features
 
-**So….?**
+Add JavaScript functions to a better user experience 
+Create a shopping cart and link check out paying methods to the page
+Add more complex shopping page where users can add several item at once to the cart from the same items 
+Link real time time reviews and images from social media to the page
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Testing
+To validate my code I used W3C for CSS and jsonformatter validator for HTML. 
 
-**Can I opt out?**
+### Client stories:
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+1. As a person who is just browsing through different website i want something eye        catching, something stands out from the crowd
+Easy to navigate, pictures are eye catching and get me attention 
+2. As a person who is new to the site I would like to see images of the product not just on display but on real people as well for better visualization  such as a gallery page 
+-There are images where I can see the fit of the different items 
+3. As a potential customer I would like to know if the product is a reliable quality, especially that it is made for kids and I would like to read feedback from previous customers 
+There is information about the material and the feedbacks are clear and easy to find 
+4. I would like to know as a potential customer, about return policies and special fits 
+There are clear display about special measurements and return policy with a clear  text
+5. As a potential customer I would like to know if there is a special service, measurements, where I don’t need to worry about getting the product to others as a present in a nice gift wrapped with a card
+Clear display about the extra services what the business has to offer 
+6. I would like to see if I can contact the seller with any questions and concerns easily, in a more convenient way for me 
+There are several ways to contact the seller and they are displayed in a clear way such a s email, message section and social media links 
+7. As a returning customer I would like to see new offers and seasonal items, making sure the there is always something new to looking forward to
+There is a special seasonal items section and it is clear and easy to navigate 
+8. As a returning customer I would like to receive specials offers and news about new release 
+On a bottom of every page there is a Sign Up for Our Newsletter where I can easily sign up for the latest offers and news
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+## Manual testing
+The website was tested all the way through, using Chrome dev tools, and made sure each section displays well in different device sizes. Also regularly run through Lighthouse both on Mobile and Desktop testing. 
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- Navar: all navigations bring user to the correct page of the site 
+- Our mission: Several set up have been tested and different images and different codes to be  able to display the text over the image in a readable format. Probably this was the longest I spent on an image as I needed a longer research on how to display the image under a text. From several tutorials and videos I found the most useful Kevin Powell and Roberto Mattheus videos. But later on found much easier ways to use opacity on an image without affecting the text above it. 
+- Our service section : was tested several times and has been changed and resized.
+- Shop page both image and background image was changed several times and was resized to be able to find the perfect background which also fits into the color scheme.
+- Gift Card section: several different background colours and sizes were tested.
+- Shop items images and row items: font size was tested several times and fake pricing was added to the items. 
+- Christmas banner: background image was tested and in the end included in media with a cropped version as there was no other way to display it in a usable and estetic way. 
+- Fancybox : it was removed and added again to the page as for the first time there was an undiscovered bug which didn’t let the images display in a way of scrolling. After several hours trying to debug the code, I have decided to delete the all codes from HTML and CSS and try to reimplement from the beginning, which worked immediately.
+- Gallery page reviews: even when adjusted size of the cards, they were not displaying in a nice user friendly way. They were too thin before they expanded for a smaller screen size. I added grid sections, lg, sm and xm to the card div but then they were not collapsing to two different sections, but they overflow to the outside of the page. I tried to wrap them into a new div individually, adding the lg sm and xm sizing to the new div. This had broken the code of card-deck and they were not displaying in the same length. In the end I decided to set their height to 100% which solves the problem of the grid and also the height of the images. 
+- Footer: The original footer did not include the accordion, but then it wasn’t displayed nice on smaller devices and it was unreadable. I found accordion on Bootstrap, but it needs JavaScript for full functioning. In the end I decided as I haven't learned JavaScript yet I will make it work with the grid section, so I generated two different footers and applied a d-none to each of them to display on the right device size. 
 
----
+#### Image testing screenshots 
 
-Happy coding!
+![Get in Touch background testing](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605864270/Rest%20of%20the%20site/Screenshot_2020-11-19_at_23.23.23_fkox4n.png)
+
+![Get in Touch background image testing 2](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605864320/Rest%20of%20the%20site/Screenshot_2020-11-19_at_23.24.28_tk0zaq.png)
+
+![Christmas banner background image testing](https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605864327/Rest%20of%20the%20site/Screenshot_2020-11-19_at_23.25.40_faupv3.png)
+
+![Small screen Christmas banner background image testing]-(https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605864335/Rest%20of%20the%20site/Screenshot_2020-11-19_at_23.26.19_yi1tx3.png)
+
+## Assets
+
+- GitHub - used GitPod as an editor 
+- HTML
+- CSS
+- jQuery - used for Fancybox, display images in a slideshow, dropdown menu in info page, accordion on info page and footer 
+- Bootstrap - used adding responsiveness and also used for some of the layouts Card elements, Form sections, Carousel, Toggle navbar, Drop down menu and Accordion 
+- Font Awesome - Through the pages used font awesome icons for social media icons in footer and icons for info page top container 
+- Google Fonts - Used Google Fonts; Open Sans and Amatic SC
+- Google Maps - embedded google map to Info Page 
+- Termly.io: copied one of the free terms and conditions templates 
+- Termsfeed.com: Copied a part of one of the free download privacy policy templates  
+- Code institute tutorial: Navalert bar on home page 
+
+## Outsourced Media 
+- Cloudinary - used to style images, all images are stored and deployed from the caching server
+- Fancybox - used to able to make gallery page image section 
+- Unsplash - background images were downloaded from Unsplash website 
+
+
+## Deployments 
+
+- My project was built and it is stored on Github 
+I created a master branch for the project in the following way:
+Go to your GitHub account and select “New Repository” from the drop down menu
+Next to the owner after the / add a short name to repository
+Select add README file and add .gitignore file 
+Create repository
+
+- If you wish to clone:
+On GitHub navigate to the main page of the repository
+Click clone or download green button 
+Click on the copy icon at the end of the https:// link
+Open the terminal
+Navigate to the location where the repository is going to be stored 
+With the repository URL enter the following $ git clone https://zitabalint.github.io/My-First-Milestone-Project-Happy-Whale/
+Press enter and the local repository was created  
+
+## Credits
+
+### Media: 
+
+All the images displayed from Happy Whale Clothing were given the right to use in the project by founders Emily and Victoria Bradley. The rest of the background images were downloaded from https://unsplash.com. All images are stored and cached from the Cloudinary website. 
+
+### Outsourced  
+- Toggle navbar and burger button was originally from [Bootstrap](https://getbootstrap.com/docs/4.0/components/navbar/) and was altered for the page’s needs. 
+- Dropdown bar was [Bootsprap](https://getbootstrap.com/docs/4.0/components/dropdowns/) and was styled and altered for the page’s needs. 
+- Home page whale background image was not copied but helped to styled by the following video [Kevin Powell: Background images](https://www.youtube.com/watch?v=33IinMVJf-M)
+- Bottom of the home page Our Service cards were taken from [Bootstrap](https://getbootstrap.com/docs/4.0/components/card/) and styled and altered for the page’s needs. 
+- Message us for was originated from bootstrap but was put together from 2 different code form [Form from Bootstrap](https://getbootstrap.com/docs/4.0/components/forms/) and was change several times and styled for the page’s needs 
+- -Review card section was originally from [Bootstarp](https://getbootstrap.com/docs/4.0/components/card/) but was adjusted and it was added a grid system to it which also took the original purpose of that specific deck-card code. 
+- Visual inspiration of the website was influenced by https://www.joules.com/ 
+
