@@ -25,3 +25,4 @@ soupsieve==2.2.1
 sqlparse==0.4.1
 stripe==2.60.0
 stripe3==0.0.0
+python-dotenv==0.19.1

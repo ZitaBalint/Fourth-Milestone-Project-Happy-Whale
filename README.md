@@ -172,6 +172,13 @@ Navigate to the location where the repository is going to be stored
 With the repository URL enter the following $ git clone https://zitabalint.github.io/Fourth-Milestone-Project-Happy-Whale/
 Press enter and the local repository was created  
 
+## Developement getting started
+
+- Clone the repository
+- Copy the `.env.template` file to `.env`, and fill in the values.
+- Install the requirements: `pip install -r requirements.txt`
+- Start the server with `python3 manage.py runserver`
+
 ## Credits
 
 ### Media: 
