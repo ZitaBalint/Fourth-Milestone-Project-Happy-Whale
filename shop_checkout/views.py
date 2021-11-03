@@ -8,12 +8,12 @@ def Ordered(request):
     cart = Cart(request)
     if request.POST.get('action') == 'post':
 
-        # userid = request.user.id
+        userid = request.user.id
         order_key = request.POST.get('order_key')
         carttotal = cart.unit_total()
 
         # check if the order is exists
-        if OrderDetails.objects.filter(order_key=order_key).exists():
+        if OrderDetails.objects.filter(userid=userid).exists():
             pass
         else:
             order = OrderDetails.objects.create(

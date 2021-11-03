@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render, redirect, reverse
 from .models import Item, Category
 from django.contrib import messages
 from django.db.models import Q
+from .forms import ItemForm
 # Create your views here.
 
 
@@ -55,3 +56,12 @@ def item_detail(request, slug):
 
     return render(request, 'items/item_detail.html', context)
 
+
+def add_item(request):
+    form = ItemForm()
+    template = 'shop/add_item.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
