@@ -1,8 +1,8 @@
 from django.db import models
-from shop.models import Item
-from profiles.models import UserProfile
 from django_countries.fields import CountryField
 
+from profiles.models import UserProfile
+from shop.models import Item
 
 # Create your models here.
 # Followed the Code Institute Tutorial

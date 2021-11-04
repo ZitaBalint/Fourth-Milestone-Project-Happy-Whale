@@ -1,16 +1,18 @@
 #core code was copied from stripe documentation
 
-from django.contrib.auth.decorators import login_required
-import stripe
 import json
-from django.http import HttpResponse
-from shopping_cart.cart import Cart
-from django.views.generic.base import TemplateView
-from django.views.decorators.csrf import csrf_exempt
-from shop_checkout.views import payment_confirmation
-from django.shortcuts import render
+
+import stripe
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
+from django.views.generic.base import TemplateView
+
+from shop_checkout.views import payment_confirmation
+from shopping_cart.cart import Cart
 
 # Create your views here.
 

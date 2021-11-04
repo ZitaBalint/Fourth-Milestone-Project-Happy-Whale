@@ -1,9 +1,11 @@
-from django.shortcuts import render
-from . models import UserProfile
-from . forms import UserProfileForm
-from django.shortcuts import get_object_or_404
 from django.contrib import messages
+from django.shortcuts import get_object_or_404, render
+
 from shop_checkout.models import OrderDetails
+
+from .forms import UserProfileForm
+from .models import UserProfile
+
 # Create your views here.
 # Followed Code institute tutorial
 

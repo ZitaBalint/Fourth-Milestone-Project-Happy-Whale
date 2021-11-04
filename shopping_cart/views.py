@@ -1,8 +1,9 @@
-from django.shortcuts import render
-from django.shortcuts import get_object_or_404
-from .cart import Cart
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404, render
+
 from shop.models import Item
+
+from .cart import Cart
 
 # Create your views here.
 

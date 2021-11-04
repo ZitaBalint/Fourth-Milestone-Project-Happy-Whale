@@ -1,7 +1,9 @@
-from django.shortcuts import render
 from django.http.response import JsonResponse
+from django.shortcuts import render
+
 from shopping_cart.cart import Cart
-from . models import OrderDetails, UnitOrder
+
+from .models import OrderDetails, UnitOrder
 
 
 def Ordered(request):

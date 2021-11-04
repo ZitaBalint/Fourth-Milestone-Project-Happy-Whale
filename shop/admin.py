@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Item, Category
+
+from .models import Category, Item
 
 
 class ItemAdmin(admin.ModelAdmin):
