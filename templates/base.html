@@ -101,7 +101,7 @@
               
             </li>
             <li class="list-inline-item">
-              <a class="nav-link" href="{% url 'cart:cart_total' %}">
+              <a class="nav-link" role="button" href="{% url 'cart:cart_total' %}">
                 {% with total_quantity=cart|length %}
                 <div id="cart-quantity" class="d-inline-flex">
                   {% if total_quantity > 0 %}

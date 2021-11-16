@@ -2,20 +2,48 @@ from django.http.response import JsonResponse
 from django.shortcuts import render
 
 from shopping_cart.cart import Cart
+from profiles.models import UserProfile
 
 from .models import OrderDetails, UnitOrder
 
+
+from django import forms
+
+
+class CheckOutForm(forms.ModelForm):
+    class Meta:
+        model = OrderDetails
+        fields = (
+            'title',
+            'first_name',
+            'last_name',
+            'email_address',
+            'address_line1',
+            'address_line2',
+            'town_or_city',
+            'country',
+            'postcode',  
+        )
+
+
+from django.views.generic.edit import CreateView
+
+class CheckoutFormView(CreateView):
+    template_name = 'checkout/checkout.html'
+    form_class =  CheckOutForm
+    success_url = '/'
+        
 
 def Ordered(request):
     cart = Cart(request)
     if request.POST.get('action') == 'post':
 
-        userid = request.user.id
+        userid = UserProfile.objects.get(user=request.user).id
         order_key = request.POST.get('order_key')
         carttotal = cart.unit_total()
 
         # check if the order is exists
-        if OrderDetails.objects.filter(userid=userid).exists():
+        if OrderDetails.objects.filter(user_profile_id=userid).exists():
             pass
         else:
             order = OrderDetails.objects.create(

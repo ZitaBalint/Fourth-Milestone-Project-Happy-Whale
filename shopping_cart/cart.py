@@ -24,11 +24,12 @@ class Cart():
         Adding to session data
         """
 
-        item_id = str(item.id)
+        item_id = str(item.id) 
 
         if item_id in self.cart:
             self.cart[item_id]['quantity'] = quantity
             self.cart[item_id]['size'] = size
+            #self.cart[item.id]['price'] = price #this was added later
 
         else:
             self.cart[item_id] = {

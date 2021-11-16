@@ -16,7 +16,7 @@ def cart_total(request):
 def cart_add(request):
     cart = Cart(request)
     if request.POST.get('action') == 'post':
-        item_id = str(request.POST.get('itemid'))
+        item_id = str(request.POST.get('itemid')) 
         item_size = str(request.POST.get('itemsize'))
         item_quantity = int(request.POST.get('itemquantity'))
         item = get_object_or_404(Item, id=item_id)

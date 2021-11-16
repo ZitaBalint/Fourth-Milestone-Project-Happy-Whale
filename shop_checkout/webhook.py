@@ -1,4 +1,4 @@
-#core code was copied from stripe documentation
+# core code was copied from stripe documentation
 
 import json
 
@@ -16,7 +16,8 @@ from shopping_cart.cart import Cart
 
 # Create your views here.
 
-endpoint_secret = "whsec_HIVZxpodn3Otkh4hXTpE7jNLSvqucC90"
+endpoint_secret = settings.STRIPE_WH_SECRET
+
 
 @login_required
 def CheckoutView(request):
@@ -27,14 +28,14 @@ def CheckoutView(request):
 
     # API key from Stripe site
 
-    stripe.api_key = 'sk_test_51JUDztBeU0R6ZOy2lywo6nuzKM9pPckoc3UjIhGdx4Shh0BwifLesRSy6dj3MQbMRryKPshBpeQUZO3WMzO0q0Ka00FmM7m3BQ'
+    stripe.api_key = settings.STRIPE_SECRET_KEY
     intent = stripe.PaymentIntent.create(
         amount=total,
         currency='gbp',
-        metadata={'userid': request.user.id}
+        metadata={'userid': (request.user).id}
     )
 
-    return render(request, 'checkout/checkout.html', {'clinet_secret': intent.client_secret})
+    return render(request, 'checkout/checkout.html', {'client_secret': intent.client_secret})
 
 
 @require_POST
