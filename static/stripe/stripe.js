@@ -1,5 +1,5 @@
 // copied from offical Stripe documentation 
-var stripe = Stripe('settings.STRIPE_PUBLIC_KEY')
+var stripe = Stripe('pk_test_51JUDztBeU0R6ZOy2fetXqavkBpRlGSlJuxmnKORXEpFMbxF46utDA82pXXegqVIMbNNboMyYOSP1ktpzIV23kRh800jZl34vB5')
 
 var eleme = document.getElementById('submit');
 clientSecret = eleme.getAttribute('data-secret');
@@ -61,7 +61,7 @@ $.ajax({
                             line1: addressLine,
                             line2: addressLine2,
                             postal_code: postCode,
-                            town_city: townCity,
+                            city: townCity,
                             country: country
                         },
                         name: firstName + " " + lastName,
@@ -75,7 +75,6 @@ $.ajax({
                 } else {
                     if (result.paymentIntent.status === 'succeeded') {
                         console.log('payment proccessed')
-                        window.location.replace('ordersent/')
                     }
                 }
               });

@@ -1,9 +1,10 @@
 from django.http.response import JsonResponse
 from django.shortcuts import render
-
+import stripe
+from django.conf import settings
 from shopping_cart.cart import Cart
 from profiles.models import UserProfile
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import OrderDetails, UnitOrder
 
 
@@ -11,6 +12,7 @@ from django import forms
 
 
 class CheckOutForm(forms.ModelForm):
+
     class Meta:
         model = OrderDetails
         fields = (
@@ -28,11 +30,26 @@ class CheckOutForm(forms.ModelForm):
 
 from django.views.generic.edit import CreateView
 
-class CheckoutFormView(CreateView):
+
+class CheckoutFormView(CreateView, LoginRequiredMixin):
     template_name = 'checkout/checkout.html'
     form_class =  CheckOutForm
-    success_url = '/'
-        
+    success_url = '/ordersent'
+
+    def get_context_data(self, **kwargs):
+        context = super(CheckoutFormView, self).get_context_data(**kwargs)
+        cart = Cart(self.request)
+        total = str(cart.unit_total())
+        total = total.replace('.', '')
+        total = int(total)
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        intent = stripe.PaymentIntent.create(
+            amount=total,
+            currency='gbp',
+            metadata={'userid': (self.request.user).id}
+        )
+        context['client_secret'] = intent.client_secret
+        return context
 
 def Ordered(request):
     cart = Cart(request)
