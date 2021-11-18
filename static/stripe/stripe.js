@@ -33,6 +33,7 @@ var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
 
+var title = document.getElementById("id_title").value;
 var firstName = document.getElementById("id_first_name").value;
 var lastName = document.getElementById("id_last_name").value;
 var emialAddress = document.getElementById("id_email_address").value;
@@ -44,8 +45,17 @@ var postCode = document.getElementById("id_postcode").value;
 
 $.ajax({
     type: "POST",
-    url: 'ordered/',
+    url: '/checkout/',
     data: {
+      // title: title,
+      first_name: firstName,
+      last_name: lastName,
+      email_address: emialAddress,
+      address_line1: addressLine,
+      address_line2: addressLine2,
+      town_or_city: townCity,
+      country: country,
+      postcode: postCode,
       order_key: clientSecret,
       csrfmiddlewaretoken: CSRF_TOKEN,
       action: "post",
@@ -74,6 +84,7 @@ $.ajax({
                     console.log(result.error.message);
                 } else {
                     if (result.paymentIntent.status === 'succeeded') {
+                        window.location.href='/checkout/ordersent/'
                         console.log('payment proccessed')
                     }
                 }

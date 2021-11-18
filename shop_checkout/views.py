@@ -34,7 +34,7 @@ from django.views.generic.edit import CreateView
 class CheckoutFormView(CreateView, LoginRequiredMixin):
     template_name = 'checkout/checkout.html'
     form_class =  CheckOutForm
-    success_url = '/ordersent'
+
 
     def get_context_data(self, **kwargs):
         context = super(CheckoutFormView, self).get_context_data(**kwargs)

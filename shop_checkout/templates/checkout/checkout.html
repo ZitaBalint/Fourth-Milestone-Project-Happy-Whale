@@ -60,11 +60,7 @@
     <div id="card-errors" class="a" role="alert"></div>
     <form id="payment-form" method="POST">
       {% csrf_token %}
-      
-
-          {{form|crispy}}
-
-      
+        {{ form|crispy }}
         <div class="d-block my-3">
           <h4 class="mb-3">Payment</h4>
           <label for="card-element">Credit or debit card</label>

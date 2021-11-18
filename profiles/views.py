@@ -20,7 +20,7 @@ def Profile(request):
             messages.success(request, 'Your profile has been updated')
 
     form = UserProfileForm(instance=profile)
-    orders = profile.orders.all()
+    orders = OrderDetails.objects.filter(user=request.user)
 
     template = 'profile/profile.html'
     context = {
@@ -32,8 +32,8 @@ def Profile(request):
     return render(request, template, context)
 
 
-def order_history(request, order_key):
-    user_id = request.user.username
-    orders = OrderDetails.objects.filter(user_id=user_id).filter(billing_status=True)
-    return orders
+# def order_history(request, order_key):
+    # user_id = request.user.username
+
+    # return orders
     

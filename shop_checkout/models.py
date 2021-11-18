@@ -1,3 +1,5 @@
+import stripe
+from django.conf import settings
 from django.db import models
 from django_countries.fields import CountryField
 
@@ -31,7 +33,7 @@ class OrderDetails(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     unit_total = models.DecimalField(max_digits=6, decimal_places=2,
                                      null=False, default=0)
-    billing_status = models.BooleanField(default=False)
+    billing_status = models.CharField(max_length=70, default='Processing')
     objects = models.Manager()
 
     class Meta:
@@ -39,6 +41,12 @@ class OrderDetails(models.Model):
     
     def __str__(self):
         return str(self.date_created)
+
+    def save(self, *args, **kwargs):
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+
+
+        super(OrderDetails, self).save(*args, **kwargs)
 
 
 class UnitOrder(models.Model):
