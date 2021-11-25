@@ -32,7 +32,6 @@ var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
-
 var title = document.getElementById("id_title").value;
 var firstName = document.getElementById("id_first_name").value;
 var lastName = document.getElementById("id_last_name").value;
@@ -47,7 +46,7 @@ $.ajax({
     type: "POST",
     url: '/checkout/',
     data: {
-      // title: title,
+      //title: title,
       first_name: firstName,
       last_name: lastName,
       email_address: emialAddress,

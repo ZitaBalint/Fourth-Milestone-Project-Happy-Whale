@@ -59,11 +59,30 @@ def item_detail(request, slug):
     return render(request, 'items/item_detail.html', context)
 
 
-def add_item(request):
+def upload_item(request):
+     form = ItemForm()
+     
+     context = {
+         'form': form,
+     }
+
+     return render(request, 'items/upload_item.html', context)
+
+
+def edit_item(request, slug):
+    item = get_object_or_404(Item, slug=slug)
     form = ItemForm()
-    template = 'shop/add_item.html'
+
     context = {
         'form': form,
+        'item': item,
     }
 
-    return render(request, template, context)
+    return render(request, 'items/edit_item.html', context)
+
+def delete_item(request, slug):
+    item = get_object_or_404(Item, slug=slug)
+    item.delete()
+
+    return redirect(items.items.html)
+
