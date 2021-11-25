@@ -41,12 +41,13 @@ var addressLine2 = document.getElementById("id_address_line2").value;
 var townCity= document.getElementById("id_town_or_city").value;
 var country= document.getElementById("id_country").value;
 var postCode = document.getElementById("id_postcode").value;
+var unit_total = document.getElementById("total").textContent;
 
 $.ajax({
     type: "POST",
     url: '/checkout/',
     data: {
-      //title: title,
+      title: title,
       first_name: firstName,
       last_name: lastName,
       email_address: emialAddress,
@@ -55,7 +56,7 @@ $.ajax({
       town_or_city: townCity,
       country: country,
       postcode: postCode,
-      order_key: clientSecret,
+      unit_total: unit_total,
       csrfmiddlewaretoken: CSRF_TOKEN,
       action: "post",
     },

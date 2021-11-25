@@ -6,6 +6,7 @@ from shopping_cart.cart import Cart
 from profiles.models import UserProfile
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import OrderDetails, UnitOrder
+from django.shortcuts import get_object_or_404
 
 
 from django import forms
@@ -24,9 +25,10 @@ class CheckOutForm(forms.ModelForm):
             'address_line2',
             'town_or_city',
             'country',
-            'postcode',  
+            'postcode',
+            'unit_total',
         )
-
+        widgets = {"unit_total": forms.HiddenInput()}
 
 from django.views.generic.edit import CreateView
 
@@ -34,7 +36,13 @@ from django.views.generic.edit import CreateView
 class CheckoutFormView(CreateView, LoginRequiredMixin):
     template_name = 'checkout/checkout.html'
     form_class =  CheckOutForm
-    success_url = '/ordersent'
+    model = OrderDetails
+    success_url = '/checkout/ordersent'
+
+    def form_valid(self, form):
+        profile = get_object_or_404(UserProfile, user=self.request.user)
+        form.instance.user_profile = profile
+        return super().form_valid(form)
 
 
     def get_context_data(self, **kwargs):
