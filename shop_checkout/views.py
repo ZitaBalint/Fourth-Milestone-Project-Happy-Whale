@@ -7,7 +7,7 @@ from profiles.models import UserProfile
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import OrderDetails, UnitOrder
 from django.shortcuts import get_object_or_404
-
+from django.views.generic.edit import CreateView
 
 from django import forms
 
@@ -30,12 +30,10 @@ class CheckOutForm(forms.ModelForm):
         )
         widgets = {"unit_total": forms.HiddenInput()}
 
-from django.views.generic.edit import CreateView
-
 
 class CheckoutFormView(CreateView, LoginRequiredMixin):
     template_name = 'checkout/checkout.html'
-    form_class =  CheckOutForm
+    form_class = CheckOutForm
     model = OrderDetails
     success_url = '/checkout/ordersent'
 
@@ -43,7 +41,6 @@ class CheckoutFormView(CreateView, LoginRequiredMixin):
         profile = get_object_or_404(UserProfile, user=self.request.user)
         form.instance.user_profile = profile
         return super().form_valid(form)
-
 
     def get_context_data(self, **kwargs):
         context = super(CheckoutFormView, self).get_context_data(**kwargs)
@@ -59,6 +56,7 @@ class CheckoutFormView(CreateView, LoginRequiredMixin):
         )
         context['client_secret'] = intent.client_secret
         return context
+
 
 def Ordered(request):
     cart = Cart(request)

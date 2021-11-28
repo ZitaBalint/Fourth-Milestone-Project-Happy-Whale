@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+
+<!--- Template was copied from Bootstrap templates -->
+<div class="row">
+  <div class="col-md-4 order-md-2 mb-4">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+      <span class="text-muted">Upload New Item</span>
+
+    </h4>
+    
+    
+    
+
+    <div class="col-md-8 order-md-1">
+        
+        <div id="card-errors" class="a" role="alert"></div>
+        <form id="payment-form" method="POST">
+          {% csrf_token %}
+            {{ form|crispy }}
+            <div class="text-right">
+              <button type="submit" class="btn btn-secondary btn-sm" onClick="javascript:history.go(-1);">Cancel
+                </button>
+              <button id="upload_button" type="submit" class="btn btn-primary w-100 fw-bold">Upload Item</button>
+            </div>
+            </div>
+        </form>
+      </div>
+    </div>
+            
+      
+<script>
+    $(document).on('click', '.upload-button', function (e) {
+        e.preventDefault();
+        var itmid = $(this).data('index');
+        $.ajax({
+            type: 'POST',
+            url: '/upload/',
+            data: {
+                itemid: $(this).data('index'),
+                itemquantity: $('#select' + itmid + ' option:selected').text(),
+                itemsize: $('#select-size' + itmid + ' option:selected').text(),
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'post'
+            },
+            success: function (cart) {
+                document.getElementById("total").innerHTML = cart.total
+                document.getElementById("cart-quantity").innerHTML = cart.quantity
+                // document.getElementById("subtotal").innerHTML = cart.subtotal
+            },
+            error: function (xhr, errmsg, err) {}
+        });
+    })
+</script>
+
+{% endblock %}

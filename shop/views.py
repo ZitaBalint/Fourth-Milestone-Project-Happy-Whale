@@ -15,13 +15,12 @@ def shop_items(request):
 
     query = None
 
-    """ Used Code Institute Search logic from Tutorial """
+# Used Code Institute Search logic from Tutorial
     if 'query' in request.GET:
         query = request.GET['query']
         if not query:
             messages.error(request, "Please enter your search")
             return redirect(reverse('items'))
-            
         queries = Q(name__icontains=query) | Q(item_description__icontains=query)
         items = items.filter(queries)
 
@@ -44,7 +43,7 @@ def items_category(request, category_slug):
         'items': items,
         }
 
-    return render(request, 'category/items_category.html', context)    
+    return render(request, 'category/items_category.html', context)
 
 
 def item_detail(request, slug):
@@ -60,13 +59,23 @@ def item_detail(request, slug):
 
 
 def upload_item(request):
-     form = ItemForm()
-     
-     context = {
-         'form': form,
-     }
+    if request.method == 'POST':
+        form = ItemForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('upload_item'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = ItemForm()
+        
+    template = 'shop/upload_item.html'
+    context = {
+        'form': form,
+    }
 
-     return render(request, 'items/upload_item.html', context)
+    return render(request, template, context)
 
 
 def edit_item(request, slug):
@@ -80,9 +89,9 @@ def edit_item(request, slug):
 
     return render(request, 'items/edit_item.html', context)
 
+
 def delete_item(request, slug):
     item = get_object_or_404(Item, slug=slug)
     item.delete()
 
-    return redirect(items.items.html)
-
+    return redirect('items.items.html')
