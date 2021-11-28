@@ -64,13 +64,13 @@ def upload_item(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('upload_item'))
+            return redirect(reverse('shop:upload_item'))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
-        form = ItemForm()
-        
-    template = 'shop/upload_item.html'
+        form = ItemForm()  
+
+    template = 'items/upload_item.html'
     context = {
         'form': form,
     }

@@ -20,7 +20,7 @@ def Profile(request):
             messages.success(request, 'Your profile has been updated')
 
     form = UserProfileForm(instance=profile)
-    orders = OrderDetails.objects.filter(user=request.user)
+    orders = OrderDetails.objects.filter(user_profile=profile)
 
     template = 'profile/profile.html'
     context = {
