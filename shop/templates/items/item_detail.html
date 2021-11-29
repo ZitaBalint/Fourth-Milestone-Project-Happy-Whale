@@ -53,6 +53,14 @@
           basket</button>
         <button type="submit" class="m-3 btn btn-secondary" onClick="javascript:history.go(-1);">Keep
           Shopping</button>
+          {% if request.user.is_authenticated %}
+          {% if request.user.is_superuser %}
+        <small class="ml-3">
+          <a href="{% url 'shop:edit_item' item.slug %}">Edit</a> | 
+          <a class="text-danger" href="{% url 'shop:delete_item' item.slug %}">Delete</a>
+      </small>
+        {% endif %} 
+        {% endif %}  
       </div>
      
     </div>

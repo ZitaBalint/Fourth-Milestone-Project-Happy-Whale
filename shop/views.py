@@ -64,7 +64,7 @@ def upload_item(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('shop:upload_item'))
+            return redirect(reverse('shop:shop'))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
@@ -80,18 +80,28 @@ def upload_item(request):
 
 def edit_item(request, slug):
     item = get_object_or_404(Item, slug=slug)
-    form = ItemForm()
-
+    if request.method == 'POST':
+        form = ItemForm(request.POST, request.FILES, instance=item)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Item has been updated!')
+            return redirect(reverse('shop:item_detail', args=[slug]))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = ItemForm(instance=item)
+    messages.info(request, f'Editing the followig item: {item.name}')
+    template = 'items/edit_item.html'
     context = {
         'form': form,
         'item': item,
     }
 
-    return render(request, 'items/edit_item.html', context)
+    return render(request, template, context)
 
 
 def delete_item(request, slug):
     item = get_object_or_404(Item, slug=slug)
     item.delete()
-
-    return redirect('items.items.html')
+    messages.success(request, 'Item has been deleted!')
+    return redirect(reverse('shop:shop'))

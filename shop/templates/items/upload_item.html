@@ -45,45 +45,6 @@
         </form>
       </div>
     </div>
-            
-      
-<script>
 
-/*var form = document.getElementById('upload-form');
-
-form.addEventListener('submit', function(ev) {
-    ev.preventDefault();
-    var category = document.getElementById("id_category").value;
-    var sku = document.getElementById("id_sku").value;
-    var slug = document.getElementById("id_slug").value;
-    var name = document.getElementById("id_name").value;
-    var item_description = document.getElementById("id_item_description").value; 
-    var price = document.getElementById("id_price").value;
-    var review_rating= document.getElementById("id_review_rating").value;
-    var image_url= document.getElementById("id_image_url").src="item.image_url";
-    $.ajax({
-       type: 'POST',
-        url: 'upload/',
-        data: {
-          category: category,
-          sku: sku,
-          slug: slug,
-          name: name,
-          item_description: item_description,
-          price: price,
-          review_rating: review_rating,
-          image_url: image_url,
-
-          csrfmiddlewaretoken: "{{csrf_token}}",
-          action: 'post'
-        },
-            success: function (item) {
-              window.location.href='/shop/'
-              console.log('item uploaded')
-            },
-            error: function (xhr, errmsg, err) {}
-        });
-    })*/
-</script>
 
 {% endblock %}
