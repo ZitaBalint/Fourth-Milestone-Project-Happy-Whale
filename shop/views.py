@@ -68,7 +68,7 @@ def upload_item(request):
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
-        form = ItemForm()  
+        form = ItemForm()
 
     template = 'items/upload_item.html'
     context = {

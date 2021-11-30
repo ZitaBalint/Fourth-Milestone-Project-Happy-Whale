@@ -29,7 +29,6 @@ class Cart():
         if item_id in self.cart:
             self.cart[item_id]['quantity'] = quantity
             self.cart[item_id]['size'] = size
-            #self.cart[item.id]['price'] = price #this was added later
 
         else:
             self.cart[item_id] = {
@@ -57,9 +56,6 @@ class Cart():
     def __len__(self):
         return sum(unit['quantity'] for unit in self.cart.values())
 
-    # def subtotal(self):
-        # return self.unit.quantity * self.unit.price
-
     def unit_total(self):
         return sum(Decimal(unit['price']) * unit['quantity'] for unit in self.cart.values())
             
@@ -84,6 +80,5 @@ class Cart():
         self.session.modified = True
 
     def clear(self):
-        # remove cart from the session
         del self.session['cartkey']
         self.save()

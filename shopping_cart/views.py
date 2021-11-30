@@ -52,12 +52,12 @@ def cart_update(request):
         item_quantity = int(request.POST.get('itemquantity'))
         item_size = str(request.POST.get('itemsize'))
         cart.update(item=item_id, quantity=item_quantity, size=item_size)
-        # cartsubtotal = cart.__iter__()
+        
         cartquantity = cart.__len__()
         carttotal = cart.unit_total()
         response = JsonResponse({
             'quantity': cartquantity,
             'total': carttotal,
-            # 'subtotal': cartsubtotal
+            
         })
         return response

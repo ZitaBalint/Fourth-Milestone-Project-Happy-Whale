@@ -29,7 +29,6 @@ class CheckOutForm(forms.ModelForm):
             'country',
             'postcode',
             'unit_total',
-            # 'cart_order'
         )
         widgets = {"unit_total": forms.HiddenInput()}
 
@@ -43,7 +42,6 @@ class CheckoutFormView(CreateView, LoginRequiredMixin):
     def form_valid(self, form):
         profile = get_object_or_404(UserProfile, user=self.request.user)
         form.instance.user_profile = profile
-        # return super().form_valid(form)
         self.object = form.save()
 
         cart = Cart(self.request)

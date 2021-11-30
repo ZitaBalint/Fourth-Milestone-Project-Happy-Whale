@@ -44,7 +44,6 @@ class OrderDetails(models.Model):
     def save(self, *args, **kwargs):
         stripe.api_key = settings.STRIPE_SECRET_KEY
 
-
         super(OrderDetails, self).save(*args, **kwargs)
 
 
