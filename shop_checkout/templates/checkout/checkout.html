@@ -11,6 +11,11 @@
 
 {% block content %}
 
+{% if not request.user.is_authenticated %}
+  <div class="alert alert-danger" role="alert">
+    Please log in to able to pay!
+  </div>
+{% endif %}
 
 <!--- Template was copied from Bootstrap templates -->
 <div class="row">
