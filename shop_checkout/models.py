@@ -17,7 +17,6 @@ TITLE_CHOICES = (
 
 
 class OrderDetails(models.Model):
-
     order_key = models.BigAutoField(primary_key=True)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True, related_name='orders')

@@ -25,6 +25,14 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">£ {{ item.price }} </li>
                     <li class="list-group-item">{{ item.review_rating }}</li>
+                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="{% url 'shop:edit_item' item.slug %}">Edit</a> |
+                        <a class="text-danger" href="{% url 'shop:delete_item' item.slug %}">Delete</a>
+                    </small>
+                    {% endif %}
+                    {% endif %}
                 </ul>
             </div>
             {% endfor %}

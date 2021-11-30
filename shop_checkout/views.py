@@ -8,6 +8,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import OrderDetails, UnitOrder
 from django.shortcuts import get_object_or_404
 from django.views.generic.edit import CreateView
+from django.http import HttpResponseRedirect
+
 
 from django import forms
 
@@ -27,6 +29,7 @@ class CheckOutForm(forms.ModelForm):
             'country',
             'postcode',
             'unit_total',
+            # 'cart_order'
         )
         widgets = {"unit_total": forms.HiddenInput()}
 
@@ -40,7 +43,20 @@ class CheckoutFormView(CreateView, LoginRequiredMixin):
     def form_valid(self, form):
         profile = get_object_or_404(UserProfile, user=self.request.user)
         form.instance.user_profile = profile
-        return super().form_valid(form)
+        # return super().form_valid(form)
+        self.object = form.save()
+
+        cart = Cart(self.request)
+        for unit in cart:
+            UnitOrder.objects.create(
+                order_id=self.object.order_key,
+                item=unit['item'],
+                unit_total=unit['price'],
+                quantity=unit['quantity'],
+                unit_size=unit['size']
+                )
+                
+        return HttpResponseRedirect(self.get_success_url())
 
     def get_context_data(self, **kwargs):
         context = super(CheckoutFormView, self).get_context_data(**kwargs)
@@ -55,6 +71,7 @@ class CheckoutFormView(CreateView, LoginRequiredMixin):
             metadata={'userid': (self.request.user).id}
         )
         context['client_secret'] = intent.client_secret
+        
         return context
 
 

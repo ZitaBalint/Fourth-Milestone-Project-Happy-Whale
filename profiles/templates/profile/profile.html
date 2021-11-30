@@ -76,15 +76,15 @@
                   {% for order in orders %}
                       <tr>
                           <td>
-
+                            {{ order.order_key }}
                           </td>
                           <td>{{ order.date_created }}</td>
                           <td>
                               <ul class="list-unstyled">
-                                  {% for unit in order.unit.all %}
+                                  {% for unit in order.units.all %}
                                       <li class="small">
-                                          {% if unit.item.sizes %}
-                                              Size {{ unit.size|upper }}
+                                          {% if unit.unit_size %}
+                                              Size {{ unit.unit_size|upper }}
                                           {% endif %}{{ unit.item.name }} x{{ unit.quantity }}
                                       </li>
                                   {% endfor %}

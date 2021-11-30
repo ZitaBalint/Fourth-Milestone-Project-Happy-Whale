@@ -1,47 +1,59 @@
 <div id-="topnav" class="row bg-white pt-lg-2 d-lg-none d-flex">
-    <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
-      <form method="GET" action="{% url 'shop:shop' %}">
-        <div class="imput-group w-100">
+  <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
+    <form method="GET" action="{% url 'shop:shop' %}">
+      <div class="imput-group w-100">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      </div> 
-        <div class="input-group-append">
+      </div>
+      <div class="input-group-append">
         <button class="btn btn-outline-success" type="submit">
           <span searc-icon>
             <i class="fas fa-search"></i>
           </span>
         </button>
-      </div> 
-      </form>
-    </div>
-    <div class="col-12 col-4 my-auto py-1 py-lg-0 ">
-    <div class="list-inline my-2 my-lg-0">
+      </div>
+    </form>
+  </div>
+  <div class="col-12 col-4 my-auto py-1 py-lg-0 ">
+    <div class="list-inline-flex my-2 my-lg-0">
       <ul>
         <li>
-            <a class="nav-brand" href="{% url 'home' %}"><img
-                src="https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605870152/Rest%20of%20the%20site/HW_logo_1_ss3d8h.jpg" /></a>
-      
-        </li>  
-        <li class="list-inline-item">
-          <a class="nav-link" href="#">
+          <a class="nav-brand" href="{% url 'home' %}"><img
+              src="https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605870152/Rest%20of%20the%20site/HW_logo_1_ss3d8h.jpg" /></a>
+
+        </li>
+        <li class="list-inline-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="user-options" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fas fa-user fa-lg"></i>
           </a>
+          <div class="dropdown-menu" aria-labelledby="user-options">
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                  <a class="dropdown-item" href="{% url 'shop:upload_item' %}">Admin</a>
+                {% endif %}
+                <a class="dropdown-item" href="{% url 'profile' %}">My Account</a>
+                <a class="dropdown-item" href="{% url 'account_logout' %}">Sign Out</a>
+            {% else %}
+                <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                <a class="dropdown-item" href="{% url 'account_login' %}">Sign In</a>
+            {% endif %}
+          </div>
+          <li class="list-inline-item">
+            <a class="nav-link" role="button" href="{% url 'cart:cart_total' %}">
+              {% with total_quantity=cart|length %}
+              <div id="cart-quantity" class="d-inline-flex">
+                {% if total_quantity > 0 %}
+                  {{ total_quantity }}
+                {% else %}
+                  0
+                {% endif %}
+              </div>
+              {% endwith%}
+              <i class="fas fa-shopping-basket fa-lg"></i>
+            </a>
         </li>
-        <li class="list-inline-item">
-          <a class="nav-link" href="{% url 'cart:cart_total' %}">
-            {% with total_quantity=cart|length %}
-            <div id="cart-quantity" class="d-inline-flex">
-              {% if total_quantity > 0 %}
-                {{ total_quantity }}
-              {% else %}
-                0
-              {% endif %}
-            </div>
-            {% endwith%}
-            <i class="fas fa-shopping-basket fa-lg"></i>
-          </a>
-        </li>
-    </ul>
+      </ul>
     </div>
   </div>
-  </div>
+</div>
 

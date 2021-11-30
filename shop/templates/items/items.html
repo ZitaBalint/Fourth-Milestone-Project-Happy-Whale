@@ -3,11 +3,11 @@
 
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -15,12 +15,16 @@
     <div class="container shop-bg-container col-12">
         <div class="row shopimage-row col-12">
             <div class="col-md-6 col-12 top-shopimage">
-                <img class="w-100 d-block" src="https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605455705/models/563616D9-1ACA-4883-84FD-8EF51C7D74FB_bktw9f.jpg" alt="Happy babies montage" />
+                <img class="w-100 d-block"
+                    src="https://res.cloudinary.com/dbwtdwgnt/image/upload/v1605455705/models/563616D9-1ACA-4883-84FD-8EF51C7D74FB_bktw9f.jpg"
+                    alt="Happy babies montage" />
             </div>
             <div class="col-md-6 col-12 review-paragraph">
                 <h2>Soft and safe fabrics</h2>
                 <p>
-                    We carefully select our fabrics to ensure they are kind to babies skin and gorgeously soft and comfortable for little legs. All of our fabrics are Öko-Tex Standard 100 certified ensuring they are chemically
+                    We carefully select our fabrics to ensure they are kind to babies skin and gorgeously soft and
+                    comfortable for little legs. All of our fabrics are Öko-Tex Standard 100 certified ensuring they are
+                    chemically
                     safe for the whole family. All seams are overlocked inside for a quality finish .
                 </p>
             </div>
@@ -33,29 +37,30 @@
             {% for item in items %}
             <div class="card col-lg-3 col-md-4 col-6 shop-cards p-3">
                 <a href="{{ item.get_absolute_url }}">
-                <img src="{{ item.image_url}}" class="card-img-top" alt="{{ item.name }}"></a>
+                    <img src="{{ item.image_url}}" class="card-img-top" alt="{{ item.name }}"></a>
                 <div class="card-body">
-                   <h4 class="card-title"><a class="text-decoration-none item-title" href="{{ item.get_absolute_url }}">{{ item.name }}</a>
-                   </h4> 
+                    <h4 class="card-title"><a class="text-decoration-none item-title"
+                            href="{{ item.get_absolute_url }}">{{ item.name }}</a>
+                    </h4>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">£ {{ item.price }} </li>
                     <li class="list-group-item">{{ item.review_rating }}</li>
                     {% if request.user.is_authenticated %}
-                {% if request.user.is_superuser %}
-                <small class="ml-3">
-                <a href="{% url 'shop:edit_item' item.slug %}">Edit</a> | 
-                <a class="text-danger" href="{% url 'shop:delete_item' item.slug %}">Delete</a>
-                 </small>
-                {% endif %} 
-                {% endif %}  
+                    {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="{% url 'shop:edit_item' item.slug %}">Edit</a> |
+                        <a class="text-danger" href="{% url 'shop:delete_item' item.slug %}">Delete</a>
+                    </small>
+                    {% endif %}
+                    {% endif %}
                 </ul>
-                
+
             </div>
             {% endfor %}
-            
+
         </div>
-        
+
     </div>
 </div>
 
