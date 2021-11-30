@@ -1,5 +1,5 @@
 // copied from offical Stripe documentation 
-var stripe = stripe('pk_test_51JUDztBeU0R6ZOy2fetXqavkBpRlGSlJuxmnKORXEpFMbxF46utDA82pXXegqVIMbNNboMyYOSP1ktpzIV23kRh800jZl34vB5')
+var stripe = Stripe('pk_test_51JUDztBeU0R6ZOy2fetXqavkBpRlGSlJuxmnKORXEpFMbxF46utDA82pXXegqVIMbNNboMyYOSP1ktpzIV23kRh800jZl34vB5')
 
 var eleme = document.getElementById('submit');
 clientSecret = eleme.getAttribute('data-secret');
