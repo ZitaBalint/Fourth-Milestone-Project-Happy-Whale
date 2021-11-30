@@ -132,6 +132,10 @@ The website was tested all the way through, using Chrome dev tools, and made sur
 - Gift Card section: several different background colours and sizes were tested.
 - Shop items images and row items: font size was tested several times and pricing and reviews were added to the card
 
+## Payment testing:
+
+- For testing the checkout functionality and payment I used the stripe test your integration test cards : https://stripe.com/docs/testing. In the site there is an option to select different countries card details and i was testing the payment site with UK card details. 
+
 ## Assets
 
 - GitHub - used GitPod as an editor 
@@ -156,12 +160,14 @@ The website was tested all the way through, using Chrome dev tools, and made sur
 
 - The project was deployed in Heroku https://happy-whale-milestone-project.herokuapp.com/ and the static files are stored in Amazon.AWS. 
 
-- My project was built and it is stored on Github 
+- My project was built and it is stored on Github and deployed to Heroku
 I created a master branch for the project in the following way:
 Go to your GitHub account and select “New Repository” from the drop down menu
 Next to the owner after the / add a short name to repository
 Select add README file and add .gitignore file 
 Create repository
+
+- Deploying to Heroku: I followed the Code Institute tuorial for Boutique Ado and folloed all those steps to set up deployment in Heroku and use AWS. Set up all the secret_keys and env in Heroku settings/config vars
 
 - If you wish to clone:
 On GitHub navigate to the main page of the repository
