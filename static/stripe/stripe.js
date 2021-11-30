@@ -45,7 +45,7 @@ var unit_total = document.getElementById("total").textContent;
 
 $.ajax({
     type: "POST",
-    url: "{% url 'checkout' %}",
+    url: '/checkout/',
     data: {
       title: title,
       first_name: firstName,
