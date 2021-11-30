@@ -29,7 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = 'TRUE'
+# 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['happy-whale-milestone-project.herokuapp.com', 'localhost']
 
@@ -161,7 +162,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }  
+        }
     }
 
 

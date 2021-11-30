@@ -34,7 +34,6 @@ def CheckoutView(request):
         currency='gbp',
         metadata={'userid': (request.user).id}
     )
-    print('kakas')
     return render(request, 'checkout/checkout.html', {'client_secret': intent.client_secret})
 
 
