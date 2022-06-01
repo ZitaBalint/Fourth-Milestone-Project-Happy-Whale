@@ -41,6 +41,7 @@
          <a class="dropdown-item" href="{% url 'account_login' %}">Sign In</a>
          {% endif %}
       </div>
+   </li>
    <li class="list-inline-item">
       <a class="nav-link" role="button" href="{% url 'cart:cart_total' %}">
          {% with total_quantity=cart|length %}
